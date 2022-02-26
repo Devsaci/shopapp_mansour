@@ -46,50 +46,7 @@ class MyApp extends StatelessWidget {
         builder: (BuildContext context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              primarySwatch: Colors.deepOrange,
-              scaffoldBackgroundColor: Colors.white,
-              appBarTheme: AppBarTheme(
-                titleSpacing: 20.0,
-                backwardsCompatibility: false,
-                systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarColor: Colors.white,
-                  statusBarIconBrightness: Brightness.dark,
-                ),
-                backgroundColor: Colors.white,
-                elevation: 0.0,
-                titleTextStyle: TextStyle(
-                  letterSpacing: 10.0,
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                iconTheme: IconThemeData(
-                  color: Colors.black,
-                  size: 40,
-                ),
-              ),
-              floatingActionButtonTheme: FloatingActionButtonThemeData(
-                backgroundColor: Colors.deepOrange,
-              ),
-              bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                showSelectedLabels: true,
-                type: BottomNavigationBarType.fixed,
-                selectedItemColor: Colors.deepOrange,
-                elevation: 50.0,
-                backgroundColor: Colors.grey[200],
-                selectedIconTheme: IconThemeData(
-                  size: 40.0,
-                ),
-              ),
-              textTheme: TextTheme(
-                bodyText1: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
-                ),
-              ),
-            ),
+            theme: lightTheme,
             darkTheme: darkTheme,
             themeMode: NewsCubit.get(context).isDark
                 ? ThemeMode.dark
