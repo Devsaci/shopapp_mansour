@@ -12,6 +12,7 @@ class OnBoardingScreen  extends StatelessWidget {
       appBar: AppBar(
         title: const Text('OnBoardingScreen'),
       ),
+
     );
   }
 }
