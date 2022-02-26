@@ -11,6 +11,7 @@ import 'layout/news_app/news_layout.dart';
 import 'modules/shop_app/on_boarding/on_boarding_screen.dart';
 import 'shared/bloc_observer.dart';
 import 'shared/network/remote/dio_helper.dart';
+import 'shared/styles/themes.dart';
 
 void main() {
   BlocOverrides.runZoned(
@@ -89,51 +90,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            darkTheme: ThemeData(
-              primarySwatch: Colors.deepOrange,
-              scaffoldBackgroundColor: HexColor('333739'),
-              appBarTheme: AppBarTheme(
-                titleSpacing: 20.0,
-                backwardsCompatibility: false,
-                systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarColor: HexColor('333739'),
-                  statusBarIconBrightness: Brightness.light,
-                ),
-                backgroundColor: HexColor('333739'),
-                elevation: 0.0,
-                titleTextStyle: TextStyle(
-                  letterSpacing: 10.0,
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                iconTheme: IconThemeData(
-                  color: Colors.white,
-                  size: 40,
-                ),
-              ),
-              floatingActionButtonTheme: FloatingActionButtonThemeData(
-                backgroundColor: Colors.deepOrange,
-              ),
-              bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                showSelectedLabels: true,
-                type: BottomNavigationBarType.fixed,
-                selectedItemColor: Colors.deepOrange,
-                unselectedItemColor: Colors.grey,
-                elevation: 20.0,
-                backgroundColor: HexColor('333739'),
-                selectedIconTheme: IconThemeData(
-                  size: 40.0,
-                ),
-              ),
-              textTheme: TextTheme(
-                bodyText1: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            darkTheme: darkTheme,
             themeMode: NewsCubit.get(context).isDark
                 ? ThemeMode.dark
                 : ThemeMode.light,
