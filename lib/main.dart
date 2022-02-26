@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'layout/news_app/news_layout.dart';
+import 'modules/shop_app/on_boarding/on_boarding_screen.dart';
 import 'shared/bloc_observer.dart';
 import 'shared/network/remote/dio_helper.dart';
 
@@ -136,7 +137,7 @@ class MyApp extends StatelessWidget {
             themeMode: NewsCubit.get(context).isDark
                 ? ThemeMode.dark
                 : ThemeMode.light,
-            home: NewsLayout(),
+            home: OnBoardingScreen(),
           );
         },
       ),
