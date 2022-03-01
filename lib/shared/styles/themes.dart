@@ -48,12 +48,13 @@ ThemeData darkTheme = ThemeData(
       color: Colors.white,
     ),
   ),
+  fontFamily: 'Jannah',
 );
 
 ThemeData lightTheme =  ThemeData(
   primarySwatch: Colors.deepOrange,
   scaffoldBackgroundColor: Colors.white,
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     titleSpacing: 20.0,
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
@@ -82,15 +83,16 @@ ThemeData lightTheme =  ThemeData(
     selectedItemColor: Colors.deepOrange,
     elevation: 50.0,
     backgroundColor: Colors.grey[200],
-    selectedIconTheme: IconThemeData(
+    selectedIconTheme: const IconThemeData(
       size: 40.0,
     ),
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     bodyText1: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
   ),
+  fontFamily: 'Jannah'
 );
