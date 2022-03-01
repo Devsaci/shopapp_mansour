@@ -10,7 +10,7 @@ class OnBoardingScreen extends StatelessWidget {
         title: const Text('OnBoardingScreen'),
       ),
       body: Column(
-
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Image(
             image: AssetImage('assets/images/onboard_1.jpg'),
@@ -27,7 +27,6 @@ class OnBoardingScreen extends StatelessWidget {
           SizedBox(
             height: 15.0,
           ),
-
         ],
       ),
     );
