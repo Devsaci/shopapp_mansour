@@ -27,6 +27,12 @@ class OnBoardingScreen extends StatelessWidget {
           SizedBox(
             height: 15.0,
           ),
+          Text(
+            'Screen Body}',
+            style: TextStyle(
+              fontSize: 14.0,
+            ),
+          ),
         ],
       ),
     );
