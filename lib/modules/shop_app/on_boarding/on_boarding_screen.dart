@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -10,6 +11,14 @@ class OnBoardingScreen extends StatelessWidget {
         title: const Text('OnBoardingScreen'),
       ),
       body: Column(
+        children: [
+
+        ],
+      ),
+    );
+  }
+
+  Widget buildBoardingItem() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Expanded(
@@ -36,38 +45,5 @@ class OnBoardingScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget buildBoardingItem() => Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: const [
-      Expanded(
-        child: Image(
-          image: AssetImage('assets/images/onboard_1.jpg'),
-        ),
-      ),
-      SizedBox(
-        height: 30.0,
-      ),
-      Text(
-        'Screen Title}',
-        style: TextStyle(
-          fontSize: 24.0,
-        ),
-      ),
-      SizedBox(
-        height: 15.0,
-      ),
-      Text(
-        'Screen Body',
-        style: TextStyle(
-          fontSize: 14.0,
-        ),
-      ),
-    ],
-  );
-
-
+      );
 }
