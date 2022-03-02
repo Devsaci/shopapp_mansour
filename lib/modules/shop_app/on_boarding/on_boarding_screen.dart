@@ -12,8 +12,10 @@ class OnBoardingScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
-          Image(
-            image: AssetImage('assets/images/onboard_1.jpg'),
+          Expanded(
+            child: Image(
+              image: AssetImage('assets/images/onboard_1.jpg'),
+            ),
           ),
           SizedBox(
             height: 30.0,
@@ -37,4 +39,35 @@ class OnBoardingScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildBoardingItem() => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: const [
+      Expanded(
+        child: Image(
+          image: AssetImage('assets/images/onboard_1.jpg'),
+        ),
+      ),
+      SizedBox(
+        height: 30.0,
+      ),
+      Text(
+        'Screen Title}',
+        style: TextStyle(
+          fontSize: 24.0,
+        ),
+      ),
+      SizedBox(
+        height: 15.0,
+      ),
+      Text(
+        'Screen Body',
+        style: TextStyle(
+          fontSize: 14.0,
+        ),
+      ),
+    ],
+  );
+
+
 }
