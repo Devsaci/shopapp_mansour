@@ -49,6 +49,7 @@ class OnBoardingScreen extends StatelessWidget {
           children: [
             Expanded(
               child: PageView.builder(
+                controller: boardController,
                 itemBuilder: (context, index) =>
                     buildBoardingItem(boarding[index]),
                 itemCount: boarding.length,
