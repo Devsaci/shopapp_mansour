@@ -28,6 +28,7 @@ class OnBoardingScreen extends StatelessWidget {
                 const Text('Indicator'),
                 FloatingActionButton(
                   onPressed: () {},
+                  child: Icon(Icons.arrow_forward_ios),
                 )
               ],
             ),
