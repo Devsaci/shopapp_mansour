@@ -95,6 +95,9 @@ class OnBoardingScreen extends StatelessWidget {
               fontSize: 14.0,
             ),
           ),
+          SizedBox(
+            height: 30.0,
+          ),
         ],
       );
 }
