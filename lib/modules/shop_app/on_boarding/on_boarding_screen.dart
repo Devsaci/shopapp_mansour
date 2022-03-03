@@ -71,17 +71,17 @@ class OnBoardingScreen extends StatelessWidget {
 
   Widget buildBoardingItem(BoardingModel model) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children:  [
           Expanded(
             child: Image(
-              image: AssetImage('assets/images/onboard_1.jpg'),
+              image: AssetImage('${model.image}'),
             ),
           ),
           SizedBox(
             height: 30.0,
           ),
           Text(
-            'Screen Title',
+            '${model.title}',
             style: TextStyle(
               fontSize: 24.0,
             ),
@@ -90,7 +90,7 @@ class OnBoardingScreen extends StatelessWidget {
             height: 15.0,
           ),
           Text(
-            'Screen Body',
+            '${model.body}',
             style: TextStyle(
               fontSize: 14.0,
             ),
