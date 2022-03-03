@@ -12,9 +12,11 @@ class OnBoardingScreen extends StatelessWidget {
       ),
       body:   Column(
         children: [
-          PageView.builder(
-            itemBuilder: (context, index) => buildBoardingItem(),
-            itemCount: 3,
+          Expanded(
+            child: PageView.builder(
+              itemBuilder: (context, index) => buildBoardingItem(),
+              itemCount: 3,
+            ),
           ),
         ],
       ),
