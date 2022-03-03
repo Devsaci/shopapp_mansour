@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BoardingModel {
   late final String image;
@@ -61,13 +62,17 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                Text('Indicator'),
+                SmoothPageIndicator(
+                  controller: boardController,
+                  count: boarding.length,
+                ),
                 Spacer(),
                 FloatingActionButton(
                   onPressed: () {
                     boardController.nextPage(
                       duration: Duration(milliseconds: 750),
-                      curve: Curves.fastLinearToSlowEaseIn,);
+                      curve: Curves.fastLinearToSlowEaseIn,
+                    );
                   },
                   child: Icon(Icons.arrow_forward_ios),
                 )
@@ -79,8 +84,7 @@ class OnBoardingScreen extends StatelessWidget {
     );
   }
 
-  Widget buildBoardingItem(BoardingModel model) =>
-      Column(
+  Widget buildBoardingItem(BoardingModel model) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
