@@ -63,7 +63,13 @@ class OnBoardingScreen extends StatelessWidget {
             Row(
               children: [
                 SmoothPageIndicator(
-                  effect: ExpandingDotsEffect(),
+                  effect: ExpandingDotsEffect(
+                    dotColor: Colors.grey,
+                    dotHeight: 10,
+                    expansionFactor: 4,
+                    dotWidth: 10,
+                    spacing: 5.0,
+                  ),
                   controller: boardController,
                   count: boarding.length,
                 ),
