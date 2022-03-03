@@ -74,14 +74,14 @@ class OnBoardingScreen extends StatelessWidget {
         children:  [
           Expanded(
             child: Image(
-              image: AssetImage('${model.image}'),
+              image: AssetImage(model.image),
             ),
           ),
           SizedBox(
             height: 30.0,
           ),
           Text(
-            '${model.title}',
+            model.title,
             style: TextStyle(
               fontSize: 24.0,
             ),
@@ -90,7 +90,7 @@ class OnBoardingScreen extends StatelessWidget {
             height: 15.0,
           ),
           Text(
-            '${model.body}',
+            model.body,
             style: TextStyle(
               fontSize: 14.0,
             ),
