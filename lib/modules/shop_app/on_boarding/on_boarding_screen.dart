@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:app_theme_mansour/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -65,6 +66,7 @@ class OnBoardingScreen extends StatelessWidget {
                 SmoothPageIndicator(
                   effect: ExpandingDotsEffect(
                     dotColor: Colors.grey,
+                    activeDotColor: defaultColor,
                     dotHeight: 10,
                     expansionFactor: 4,
                     dotWidth: 10,
