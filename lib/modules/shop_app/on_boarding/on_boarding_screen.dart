@@ -16,6 +16,9 @@ class BoardingModel {
 
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
+
+  var boardController = PageController();
+
   List<BoardingModel> boarding = [
     BoardingModel(
       image: 'assets/images/onboard_1.jpg',
