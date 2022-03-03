@@ -16,7 +16,12 @@ class BoardingModel {
 
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
-  List<BoardingModel> boarding = [];
+  List<BoardingModel> boarding = [
+    BoardingModel(image: 'image1', title: 'title1', body: 'body1'),
+    BoardingModel(image: 'image2', title: 'title2', body: 'body2'),
+    BoardingModel(image: 'image3', title: 'title3', body: 'body3')
+    
+  ];
 
   @override
   Widget build(BuildContext context) {
