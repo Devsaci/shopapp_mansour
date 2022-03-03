@@ -46,7 +46,8 @@ class OnBoardingScreen extends StatelessWidget {
           children: [
             Expanded(
               child: PageView.builder(
-                itemBuilder: (context, index) => buildBoardingItem(boarding[index]),
+                itemBuilder: (context, index) =>
+                    buildBoardingItem(boarding[index]),
                 itemCount: boarding.length,
               ),
             ),
@@ -71,7 +72,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   Widget buildBoardingItem(BoardingModel model) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  [
+        children: [
           Expanded(
             child: Image(
               image: AssetImage(model.image),
