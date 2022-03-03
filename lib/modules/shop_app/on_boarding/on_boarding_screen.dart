@@ -11,7 +11,7 @@ class OnBoardingScreen extends StatelessWidget {
         title: const Text('OnBoardingScreen'),
       ),
       body:   Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           children: [
             Expanded(
@@ -19,6 +19,10 @@ class OnBoardingScreen extends StatelessWidget {
                 itemBuilder: (context, index) => buildBoardingItem(),
                 itemCount: 3,
               ),
+            ),
+            // ignore: prefer_const_constructors
+            SizedBox(
+              height: 30,
             ),
             Row(
               children: const [
