@@ -2,10 +2,17 @@
 
 import 'package:flutter/material.dart';
 
-class BoardingModel{
+class BoardingModel {
+  late final String image;
+  late final String title;
+  late final String body;
 
+  BoardingModel({
+    required this.image,
+    required this.title,
+    required this.body,
+  });
 }
-
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -17,7 +24,7 @@ class OnBoardingScreen extends StatelessWidget {
         title: const Text('OnBoardingScreen'),
       ),
       body: Padding(
-        padding:  EdgeInsets.all(30.0),
+        padding: EdgeInsets.all(30.0),
         child: Column(
           children: [
             Expanded(
@@ -31,8 +38,8 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                 Text('Indicator'),
-                 Spacer(),
+                Text('Indicator'),
+                Spacer(),
                 FloatingActionButton(
                   onPressed: () {},
                   child: Icon(Icons.arrow_forward_ios),
