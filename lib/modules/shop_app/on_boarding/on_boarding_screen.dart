@@ -17,10 +17,21 @@ class BoardingModel {
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
   List<BoardingModel> boarding = [
-    BoardingModel(image: 'image1', title: 'title1', body: 'body1'),
-    BoardingModel(image: 'image2', title: 'title2', body: 'body2'),
-    BoardingModel(image: 'image3', title: 'title3', body: 'body3')
-    
+    BoardingModel(
+      image: 'assets/images/onboard_1.jpg',
+      title: 'On Board 1 Title',
+      body: 'On Board 1 Body',
+    ),
+    BoardingModel(
+      image: 'assets/images/onboard_1.jpg',
+      title: 'On Board 2 Title',
+      body: 'On Board 2 Body',
+    ),
+    BoardingModel(
+      image: 'assets/images/onboard_1.jpg',
+      title: 'On Board 3 Title',
+      body: 'On Board 3 Body',
+    )
   ];
 
   @override
