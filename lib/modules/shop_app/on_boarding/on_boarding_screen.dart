@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -10,7 +9,7 @@ class OnBoardingScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('OnBoardingScreen'),
       ),
-      body:   Padding(
+      body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
           children: [
@@ -22,14 +21,16 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             // ignore: prefer_const_constructors
             SizedBox(
-              height: 30,
+              height: 40,
             ),
             Row(
-              children: const [
-                Text('Indicator')
+              children: [
+                const Text('Indicator'),
+                FloatingActionButton(
+                  onPressed: () {},
+                )
               ],
             ),
-
           ],
         ),
       ),
