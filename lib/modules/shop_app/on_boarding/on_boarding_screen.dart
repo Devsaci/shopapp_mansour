@@ -15,12 +15,10 @@ class BoardingModel {
 }
 
 class OnBoardingScreen extends StatelessWidget {
-   const OnBoardingScreen({Key? key}) : super(key: key);
+  OnBoardingScreen({Key? key}) : super(key: key);
+  List<BoardingModel> boarding = [];
 
-
-   List<BoardingModel> boarding =[];
-
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
