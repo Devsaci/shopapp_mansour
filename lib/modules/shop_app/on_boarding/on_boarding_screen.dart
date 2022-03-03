@@ -63,7 +63,11 @@ class OnBoardingScreen extends StatelessWidget {
                 Text('Indicator'),
                 Spacer(),
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    boardController.nextPage(
+                      duration: Duration(milliseconds: 750),
+                      curve: Curves.fastLinearToSlowEaseIn,);
+                  },
                   child: Icon(Icons.arrow_forward_ios),
                 )
               ],
@@ -74,7 +78,8 @@ class OnBoardingScreen extends StatelessWidget {
     );
   }
 
-  Widget buildBoardingItem(BoardingModel model) => Column(
+  Widget buildBoardingItem(BoardingModel model) =>
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
