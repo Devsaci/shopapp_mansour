@@ -10,15 +10,24 @@ class OnBoardingScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('OnBoardingScreen'),
       ),
-      body:   Column(
-        children: [
-          Expanded(
-            child: PageView.builder(
-              itemBuilder: (context, index) => buildBoardingItem(),
-              itemCount: 3,
+      body:   Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: PageView.builder(
+                itemBuilder: (context, index) => buildBoardingItem(),
+                itemCount: 3,
+              ),
             ),
-          ),
-        ],
+            Row(
+              children: const [
+                Text('Indicator')
+              ],
+            ),
+
+          ],
+        ),
       ),
     );
   }
@@ -35,7 +44,7 @@ class OnBoardingScreen extends StatelessWidget {
             height: 30.0,
           ),
           Text(
-            'Screen Title}',
+            'Screen Title',
             style: TextStyle(
               fontSize: 24.0,
             ),
