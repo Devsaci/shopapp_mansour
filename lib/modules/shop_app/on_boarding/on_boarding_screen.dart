@@ -10,7 +10,7 @@ class OnBoardingScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('OnBoardingScreen'),
       ),
-      body: Column(
+      body:   Column(
         children: [
           PageView.builder(
             itemBuilder: (context, index) => buildBoardingItem(),
