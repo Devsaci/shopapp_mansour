@@ -49,6 +49,7 @@ class OnBoardingScreen extends StatelessWidget {
           children: [
             Expanded(
               child: PageView.builder(
+                physics: BouncingScrollPhysics(),
                 controller: boardController,
                 itemBuilder: (context, index) =>
                     buildBoardingItem(boarding[index]),
