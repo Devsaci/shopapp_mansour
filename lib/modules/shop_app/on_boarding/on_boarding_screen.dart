@@ -1,4 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+
+class BoardingModel{
+
+}
+
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -10,7 +17,7 @@ class OnBoardingScreen extends StatelessWidget {
         title: const Text('OnBoardingScreen'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding:  EdgeInsets.all(30.0),
         child: Column(
           children: [
             Expanded(
@@ -19,14 +26,13 @@ class OnBoardingScreen extends StatelessWidget {
                 itemCount: 3,
               ),
             ),
-            // ignore: prefer_const_constructors
             SizedBox(
               height: 40,
             ),
             Row(
               children: [
-                const Text('Indicator'),
-                Spacer(),
+                 Text('Indicator'),
+                 Spacer(),
                 FloatingActionButton(
                   onPressed: () {},
                   child: Icon(Icons.arrow_forward_ios),
