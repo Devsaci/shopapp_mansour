@@ -49,6 +49,11 @@ class ShopLoginScreen extends StatelessWidget {
             defaultFormField(
               controller: passwordController,
               type: TextInputType.visiblePassword,
+              validate: (value){
+                if (value!.isEmpty) {
+                  return 'password is too short';
+                }
+              },
             ),
           ],
         ),
