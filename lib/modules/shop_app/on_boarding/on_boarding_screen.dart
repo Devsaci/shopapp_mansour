@@ -61,8 +61,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 onPageChanged: (int index){
                   if(index == boarding.length-1)
                     {
-                      print('last');
-                    }
+                      setState(() {
+                        isLast = true;
+                      });
+                      print('Last');
+                    }else{
+                    setState(() {
+                      isLast = false;
+                    });
+                    print('Not Last');
+                  }
                 },
                 itemBuilder: (context, index) =>
                     buildBoardingItem(boarding[index]),
