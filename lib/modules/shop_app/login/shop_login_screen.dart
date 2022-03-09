@@ -34,7 +34,11 @@ class ShopLoginScreen extends StatelessWidget {
             defaultFormField(
               controller: emailController,
               type: TextInputType.emailAddress,
-
+              validate: (value) {
+                if (value!.isEmpty) {
+                  return 'please enter your email address';
+                }
+              },
             ),
           ],
         ),
