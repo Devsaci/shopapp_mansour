@@ -1,3 +1,4 @@
+
 import 'package:app_theme_mansour/modules/shop_app/login/shop_login_screen.dart';
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:app_theme_mansour/shared/styles/colors.dart';
@@ -49,6 +50,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          TextButton(onPressed: (){}, child: const Text('SKIP'))
+        ],
         title: const Text('OnBoardingScreen'),
       ),
       body: Padding(
