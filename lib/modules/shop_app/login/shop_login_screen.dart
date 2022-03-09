@@ -7,6 +7,7 @@ class ShopLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
+    var passwordController = TextEditingController();
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -25,7 +26,7 @@ class ShopLoginScreen extends StatelessWidget {
               'Login now to browse our hot offers',
               style: Theme.of(context)
                   .textTheme
-                  .bodyText1
+                  .bodyText2
                   ?.copyWith(color: Colors.black),
             ),
             const SizedBox(
@@ -41,6 +42,12 @@ class ShopLoginScreen extends StatelessWidget {
               },
               label: 'Email Address',
               prefix: Icons.email_outlined,
+            ),
+            const SizedBox(
+              height: 15.0,
+            ),
+            defaultFormField(
+              controller: passwordController,
             ),
           ],
         ),
