@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 
@@ -132,7 +131,8 @@ Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
       ),
       fallback: (BuildContext context) => isSearch
           ? Center(
-              child: Container(child: Text('In Progress Wait PLease'),color: Colors.amber),
+              child: Container(
+                  child: Text('In Progress Wait PLease'), color: Colors.amber),
             )
           : Center(
               child: CircularProgressIndicator(),
@@ -144,4 +144,18 @@ void navigateTo(context, widget) => Navigator.push(
       MaterialPageRoute(
         builder: (context) => widget,
       ),
+    );
+
+void navigateAndFinish(
+  context,
+  widget,
+) =>
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => widget,
+      ),
+      (route) {
+        return false;
+      },
     );

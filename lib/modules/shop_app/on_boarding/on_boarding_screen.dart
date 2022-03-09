@@ -98,7 +98,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 FloatingActionButton(
                   onPressed: () {
                     if (isLast) {
-                      navigateTo(context, ShopLoginScreen());
+                      navigateAndFinish(context, const ShopLoginScreen());
                     } else {
                       boardController.nextPage(
                         duration: const Duration(milliseconds: 750),
