@@ -9,12 +9,23 @@ class ShopLoginScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          Text(
-            'LOGIN',
-            style: Theme.of(context).textTheme.headline4?.copyWith(
-              color: Colors.black
-            ),
-          ),
+        Text(
+        'LOGIN',
+        style: Theme
+            .of(context)
+            .textTheme
+            .headline4
+            ?.copyWith(color: Colors.black),
+      ),
+      Text(
+        'Login now to browse our hot offers',
+        style: Theme
+            .of(context)
+            .textTheme
+            .headline4
+            ?.copyWith(
+            color: Colors.black
+        ),
         ],
       ),
     );
