@@ -48,6 +48,7 @@ class ShopLoginScreen extends StatelessWidget {
             ),
             defaultFormField(
               controller: passwordController,
+              type: TextInputType.visiblePassword,
             ),
           ],
         ),
