@@ -54,6 +54,7 @@ class ShopLoginScreen extends StatelessWidget {
                   return 'password is too short';
                 }
               },
+              label: 'Password',
             ),
           ],
         ),
