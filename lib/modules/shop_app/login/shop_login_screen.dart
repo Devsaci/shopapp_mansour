@@ -40,6 +40,7 @@ class ShopLoginScreen extends StatelessWidget {
                 }
               },
               label: 'Email Address',
+              prefix: Icons.email_outlined,
             ),
           ],
         ),
