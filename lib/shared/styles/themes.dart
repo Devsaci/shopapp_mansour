@@ -32,7 +32,7 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: Colors.deepOrange,
+    // backgroundColor: Colors.deepOrange,
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     showSelectedLabels: true,
@@ -79,7 +79,7 @@ ThemeData lightTheme =  ThemeData(
     ),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: Colors.deepOrange,
+    // backgroundColor: Colors.deepOrange,
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     showSelectedLabels: true,
