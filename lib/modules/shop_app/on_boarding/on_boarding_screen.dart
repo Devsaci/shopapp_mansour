@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:app_theme_mansour/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
@@ -46,25 +45,25 @@ class OnBoardingScreen extends StatelessWidget {
         title: const Text('OnBoardingScreen'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(30.0),
+        padding:const  EdgeInsets.all(30.0),
         child: Column(
           children: [
             Expanded(
               child: PageView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 controller: boardController,
                 itemBuilder: (context, index) =>
                     buildBoardingItem(boarding[index]),
                 itemCount: boarding.length,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Row(
               children: [
                 SmoothPageIndicator(
-                  effect: ExpandingDotsEffect(
+                  effect: const ExpandingDotsEffect(
                     dotColor: Colors.grey,
                     activeDotColor: defaultColor,
                     dotHeight: 10,
@@ -75,15 +74,15 @@ class OnBoardingScreen extends StatelessWidget {
                   controller: boardController,
                   count: boarding.length,
                 ),
-                Spacer(),
+                const Spacer(),
                 FloatingActionButton(
                   onPressed: () {
                     boardController.nextPage(
-                      duration: Duration(milliseconds: 750),
+                      duration: const Duration(milliseconds: 750),
                       curve: Curves.fastLinearToSlowEaseIn,
                     );
                   },
-                  child: Icon(Icons.arrow_forward_ios),
+                  child: const Icon(Icons.arrow_forward_ios),
                 )
               ],
             ),
@@ -96,30 +95,30 @@ class OnBoardingScreen extends StatelessWidget {
   Widget buildBoardingItem(BoardingModel model) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+           Expanded(
             child: Image(
               image: AssetImage(model.image),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30.0,
           ),
           Text(
             model.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24.0,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15.0,
           ),
           Text(
             model.body,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14.0,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30.0,
           ),
         ],
