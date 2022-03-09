@@ -1,4 +1,5 @@
-
+import 'package:app_theme_mansour/modules/shop_app/login/shop_login_screen.dart';
+import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:app_theme_mansour/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -51,21 +52,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         title: const Text('OnBoardingScreen'),
       ),
       body: Padding(
-        padding:const  EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           children: [
             Expanded(
               child: PageView.builder(
                 physics: const BouncingScrollPhysics(),
                 controller: boardController,
-                onPageChanged: (int index){
-                  if(index == boarding.length-1)
-                    {
-                      setState(() {
-                        isLast = true;
-                      });
-                      print('Last');
-                    }else{
+                onPageChanged: (int index) {
+                  if (index == boarding.length - 1) {
+                    setState(() {
+                      isLast = true;
+                    });
+                    print('Last');
+                  } else {
                     setState(() {
                       isLast = false;
                     });
@@ -97,10 +97,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 const Spacer(),
                 FloatingActionButton(
                   onPressed: () {
-                    boardController.nextPage(
-                      duration: const Duration(milliseconds: 750),
-                      curve: Curves.fastLinearToSlowEaseIn,
-                    );
+                    if (isLast) {
+                      navigateTo(context, ShopLoginScreen());
+                    } else {
+                      boardController.nextPage(
+                        duration: const Duration(milliseconds: 750),
+                        curve: Curves.fastLinearToSlowEaseIn,
+                      );
+                    }
                   },
                   child: const Icon(Icons.arrow_forward_ios),
                 )
@@ -115,7 +119,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget buildBoardingItem(BoardingModel model) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Expanded(
+          Expanded(
             child: Image(
               image: AssetImage(model.image),
             ),
