@@ -42,6 +42,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: 'On Board 3 Body',
     )
   ];
+  bool isLast = false;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +58,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               child: PageView.builder(
                 physics: const BouncingScrollPhysics(),
                 controller: boardController,
+                onPageChanged: (int index){
+                  if(index == boarding.length-1)
+                    {
+                      print('last');
+                    }
+                },
                 itemBuilder: (context, index) =>
                     buildBoardingItem(boarding[index]),
                 itemCount: boarding.length,
