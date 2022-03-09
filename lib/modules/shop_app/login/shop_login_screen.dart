@@ -39,6 +39,7 @@ class ShopLoginScreen extends StatelessWidget {
                   return 'please enter your email address';
                 }
               },
+              label: 'Email Address',
             ),
           ],
         ),
