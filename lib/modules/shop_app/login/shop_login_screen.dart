@@ -1,3 +1,4 @@
+import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:flutter/material.dart';
 
 class ShopLoginScreen extends StatelessWidget {
@@ -5,6 +6,7 @@ class ShopLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -25,6 +27,14 @@ class ShopLoginScreen extends StatelessWidget {
                   .textTheme
                   .bodyText1
                   ?.copyWith(color: Colors.black),
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
+            defaultFormField(
+              controller: emailController,
+              type: TextInputType.emailAddress,
+
             ),
           ],
         ),
