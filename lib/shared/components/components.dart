@@ -11,7 +11,7 @@ Widget defaultTextButton({
 }) {
   return TextButton(
     onPressed: function,
-    child: Text(text),
+    child: Text(text.toUpperCase()),
   );
 }
 
