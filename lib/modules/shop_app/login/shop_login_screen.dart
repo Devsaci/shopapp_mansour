@@ -59,13 +59,24 @@ class ShopLoginScreen extends StatelessWidget {
               label: 'Password',
               prefix: Icons.lock_outline,
             ),
-
+            const SizedBox(
+              height: 30.0,
+            ),
             defaultButton(
               function: () {},
               text: 'login',
               isUpperCase: true,
-
-            )
+            ),
+            const SizedBox(
+              height: 15.0,
+            ),
+            Row(
+              children:  const [
+                Text(
+                  'Don\'t have an account?',
+                ),
+              ],
+            ),
           ],
         ),
       ),
