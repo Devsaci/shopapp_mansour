@@ -8,12 +8,10 @@ import '../../modules/news_app/web_view/web_view_screen.dart';
 Widget defaultTextButton({
   required Function() function,
   required String text,
-}) {
-  return TextButton(
+}) => TextButton(
     onPressed: function,
     child: Text(text.toUpperCase()),
   );
-}
 
 Widget defaultFormField({
   TextEditingController? controller,
