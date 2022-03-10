@@ -10,8 +10,8 @@ Widget defaultTextButton({
   required String text,
 }) {
   return TextButton(
-    onPressed: () {},
-    child: Text(''),
+    onPressed: function,
+    child: Text(text),
   );
 }
 
