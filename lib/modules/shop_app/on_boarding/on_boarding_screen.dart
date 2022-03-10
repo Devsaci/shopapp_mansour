@@ -50,15 +50,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          TextButton(
-            onPressed: () {
+          defaultTextButton(
+            function: () {
               navigateAndFinish(
                 context,
                 const ShopLoginScreen(),
               );
             },
-            child: const Text('SKIP'),
-          )
+            text: ('SKIP'),
+          ),
         ],
         title: const Text('OnBoardingScreen'),
       ),
