@@ -7,6 +7,7 @@ import '../../modules/news_app/web_view/web_view_screen.dart';
 
 Widget defaultTextButton({
   required Function() function,
+  required String text,
 }) {
   return TextButton(
     onPressed: () {},
