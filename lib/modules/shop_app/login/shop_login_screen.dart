@@ -1,4 +1,5 @@
 import 'package:app_theme_mansour/shared/components/components.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../register/shop_register_screen.dart';
@@ -73,6 +74,7 @@ class ShopLoginScreen extends StatelessWidget {
               height: 15.0,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   'Don\'t have an account?',
