@@ -50,7 +50,7 @@ class ShopLoginScreen extends StatelessWidget {
               controller: passwordController,
               type: TextInputType.visiblePassword,
               suffix: Icons.visibility,
-              suffixPressed: (){},
+              suffixPressed: () {},
               validate: (value) {
                 if (value!.isEmpty) {
                   return 'password is too short';
@@ -59,6 +59,13 @@ class ShopLoginScreen extends StatelessWidget {
               label: 'Password',
               prefix: Icons.lock_outline,
             ),
+
+            defaultButton(
+              function: () {},
+              text: 'login',
+              isUpperCase: true,
+
+            )
           ],
         ),
       ),
