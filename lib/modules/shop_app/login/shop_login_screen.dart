@@ -1,6 +1,8 @@
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:flutter/material.dart';
 
+import '../register/shop_register_screen.dart';
+
 class ShopLoginScreen extends StatelessWidget {
   const ShopLoginScreen({Key? key}) : super(key: key);
 
@@ -71,9 +73,18 @@ class ShopLoginScreen extends StatelessWidget {
               height: 15.0,
             ),
             Row(
-              children:  const [
-                Text(
+              children: [
+                const Text(
                   'Don\'t have an account?',
+                ),
+                defaultTextButton(
+                  function: () {
+                    navigateTo(
+                      context,
+                      ShopRegisterScreen(),
+                    );
+                  },
+                  text: ('register'),
                 ),
               ],
             ),
