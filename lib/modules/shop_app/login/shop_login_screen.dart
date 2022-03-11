@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +27,10 @@ class ShopLoginScreen extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .headline4
-                      ?.copyWith(color: Colors.black),
+                      ?.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 30.0,
                 ),
                 Text(
                   'Login now to browse our hot offers',
