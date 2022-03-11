@@ -13,85 +13,87 @@ class ShopLoginScreen extends StatelessWidget {
     var passwordController = TextEditingController();
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'LOGIN',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    ?.copyWith(color: Colors.black),
-              ),
-              Text(
-                'Login now to browse our hot offers',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText2
-                    ?.copyWith(color: Colors.black),
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              defaultFormField(
-                controller: emailController,
-                type: TextInputType.emailAddress,
-                validate: (value) {
-                  if (value!.isEmpty) {
-                    return 'please enter your email address';
-                  }
-                },
-                label: 'Email Address',
-                prefix: Icons.email_outlined,
-              ),
-              const SizedBox(
-                height: 15.0,
-              ),
-              defaultFormField(
-                controller: passwordController,
-                type: TextInputType.visiblePassword,
-                suffix: Icons.visibility,
-                suffixPressed: () {},
-                validate: (value) {
-                  if (value!.isEmpty) {
-                    return 'password is too short';
-                  }
-                },
-                label: 'Password',
-                prefix: Icons.lock_outline,
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              defaultButton(
-                function: () {},
-                text: 'login',
-                isUpperCase: true,
-              ),
-              const SizedBox(
-                height: 15.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Don\'t have an account?',
-                  ),
-                  defaultTextButton(
-                    function: () {
-                      navigateTo(
-                        context,
-                        ShopRegisterScreen(),
-                      );
-                    },
-                    text: ('register'),
-                  ),
-                ],
-              ),
-            ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'LOGIN',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      ?.copyWith(color: Colors.black),
+                ),
+                Text(
+                  'Login now to browse our hot offers',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2
+                      ?.copyWith(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                defaultFormField(
+                  controller: emailController,
+                  type: TextInputType.emailAddress,
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'please enter your email address';
+                    }
+                  },
+                  label: 'Email Address',
+                  prefix: Icons.email_outlined,
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                defaultFormField(
+                  controller: passwordController,
+                  type: TextInputType.visiblePassword,
+                  suffix: Icons.visibility,
+                  suffixPressed: () {},
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'password is too short';
+                    }
+                  },
+                  label: 'Password',
+                  prefix: Icons.lock_outline,
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                defaultButton(
+                  function: () {},
+                  text: 'login',
+                  isUpperCase: true,
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Don\'t have an account?',
+                    ),
+                    defaultTextButton(
+                      function: () {
+                        navigateTo(
+                          context,
+                          ShopRegisterScreen(),
+                        );
+                      },
+                      text: ('register'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

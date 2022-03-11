@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
                 ? ThemeMode.dark
                 : ThemeMode.light,
             home: OnBoardingScreen(),
+            // home: NewsLayout(),
           );
         },
       ),
