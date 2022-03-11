@@ -7,7 +7,8 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://newsapi.org/',
+        //https://www.getpostman.com/collections/3223d639447a8524e38f
+        baseUrl: 'https://student.valuxapps.com/api/',
         receiveDataWhenStatusError: true,
       ),
     );
