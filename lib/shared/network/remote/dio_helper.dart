@@ -27,7 +27,10 @@ class DioHelper {
     );
   }
 
-  static Future<Response> postData() async {
+  static Future<Response> postData({
+    required String? url,
+    required Map<String, dynamic>? query,
+}) async {
     return dio.post('path',);
   }
 }
