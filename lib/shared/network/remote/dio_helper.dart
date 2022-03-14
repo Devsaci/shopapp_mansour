@@ -33,6 +33,8 @@ class DioHelper {
   }) async {
     return dio.post(
       url!,
+      queryParameters: query,
+
     );
   }
 }
