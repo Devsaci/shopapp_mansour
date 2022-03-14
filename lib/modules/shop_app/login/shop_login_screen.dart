@@ -1,6 +1,5 @@
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,6 +10,7 @@ import 'cubit/states.dart';
 class ShopLoginScreen extends StatelessWidget {
   ShopLoginScreen({Key? key}) : super(key: key);
   var formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
@@ -34,20 +34,19 @@ class ShopLoginScreen extends StatelessWidget {
                       children: [
                         Text(
                           'LOGIN',
-                          style: Theme
-                              .of(context)
+                          style: Theme.of(context)
                               .textTheme
                               .headline4
                               ?.copyWith(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(
                           height: 30.0,
                         ),
                         Text(
                           'Login now to browse our hot offers',
-                          style: Theme
-                              .of(context)
+                          style: Theme.of(context)
                               .textTheme
                               .bodyText2
                               ?.copyWith(color: Colors.black),
@@ -87,18 +86,20 @@ class ShopLoginScreen extends StatelessWidget {
                         ),
                         ConditionalBuilder(
                           condition: state is! ShopLoginLoadingState,
-                          builder: (BuildContext context) =>
-                              defaultButton(
-                                function: () {
-                                  ShopLoginCubit.get(context).userLogin(
-                                    email: emailController.text,
-                                    password: passwordController.text,);
-                                },
-                                text: 'login',
-                                isUpperCase: true,
-                              ),
+                          builder: (BuildContext context) => defaultButton(
+                            function: () {
+                              if (formKey.currentState!.validate()) {  // null safety
+                                ShopLoginCubit.get(context).userLogin(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                );
+                              }
+                            },
+                            text: 'login',
+                            isUpperCase: true,
+                          ),
                           fallback: (BuildContext context) =>
-                          const Center(child: CircularProgressIndicator()),
+                              const Center(child: CircularProgressIndicator()),
                         ),
                         const SizedBox(
                           height: 15.0,
