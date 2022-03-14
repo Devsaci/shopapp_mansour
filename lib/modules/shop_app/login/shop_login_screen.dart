@@ -32,7 +32,11 @@ class ShopLoginScreen extends StatelessWidget {
                     children: [
                       Text(
                         'LOGIN',
-                        style: Theme.of(context).textTheme.headline4?.copyWith(
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .headline4
+                            ?.copyWith(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
@@ -40,7 +44,8 @@ class ShopLoginScreen extends StatelessWidget {
                       ),
                       Text(
                         'Login now to browse our hot offers',
-                        style: Theme.of(context)
+                        style: Theme
+                            .of(context)
                             .textTheme
                             .bodyText2
                             ?.copyWith(color: Colors.black),
@@ -80,13 +85,18 @@ class ShopLoginScreen extends StatelessWidget {
                       ),
                       ConditionalBuilder(
                         condition: state is! ShopLoginLoadingState,
-                        builder: (BuildContext context) => defaultButton(
-                          function: () {},
-                          text: 'login',
-                          isUpperCase: true,
-                        ),
+                        builder: (BuildContext context) =>
+                            defaultButton(
+                              function: () {
+                                ShopLoginCubit.get(context).userLogin(
+                                  email: emailController.text,
+                                  password: passwordController.text,);
+                              },
+                              text: 'login',
+                              isUpperCase: true,
+                            ),
                         fallback: (BuildContext context) =>
-                            const Center(child:  CircularProgressIndicator()),
+                        const Center(child: CircularProgressIndicator()),
                       ),
                       const SizedBox(
                         height: 15.0,
