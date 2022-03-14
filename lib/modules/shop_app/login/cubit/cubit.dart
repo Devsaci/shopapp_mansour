@@ -20,6 +20,6 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
         'email': email,
         'password': password,
       },
-    );
+    ).then((value) => null);
   }
 }
