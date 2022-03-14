@@ -79,7 +79,7 @@ class ShopLoginScreen extends StatelessWidget {
                         height: 30.0,
                       ),
                       ConditionalBuilder(
-                        condition: false,
+                        condition: state is! ShopLoginLoadingState,
                         builder: (BuildContext context) => defaultButton(
                           function: () {},
                           text: 'login',
