@@ -31,6 +31,9 @@ class DioHelper {
     required String? url,
     required Map<String, dynamic>? query,
 }) async {
-    return dio.post('path',);
+    return dio.post(
+      url!,
+
+    );
   }
 }
