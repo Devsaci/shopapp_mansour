@@ -72,6 +72,14 @@ class ShopLoginScreen extends StatelessWidget {
                           controller: passwordController,
                           type: TextInputType.visiblePassword,
                           suffix: Icons.visibility,
+                          onSubmit: (value){
+                            if (formKey.currentState!.validate()) {
+                              ShopLoginCubit.get(context).userLogin(
+                                email: emailController.text,
+                                password: passwordController.text,
+                              );
+                            }
+                          },
                           suffixPressed: () {},
                           validate: (value) {
                             if (value!.isEmpty) {
