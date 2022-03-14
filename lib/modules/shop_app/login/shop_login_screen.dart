@@ -27,98 +27,101 @@ class ShopLoginScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'LOGIN',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .headline4
-                            ?.copyWith(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
-                      Text(
-                        'Login now to browse our hot offers',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .bodyText2
-                            ?.copyWith(color: Colors.black),
-                      ),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
-                      defaultFormField(
-                        controller: emailController,
-                        type: TextInputType.emailAddress,
-                        validate: (value) {
-                          if (value!.isEmpty) {
-                            return 'please enter your email address';
-                          }
-                        },
-                        label: 'Email Address',
-                        prefix: Icons.email_outlined,
-                      ),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      defaultFormField(
-                        controller: passwordController,
-                        type: TextInputType.visiblePassword,
-                        suffix: Icons.visibility,
-                        suffixPressed: () {},
-                        validate: (value) {
-                          if (value!.isEmpty) {
-                            return 'password is too short';
-                          }
-                        },
-                        label: 'Password',
-                        prefix: Icons.lock_outline,
-                      ),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
-                      ConditionalBuilder(
-                        condition: state is! ShopLoginLoadingState,
-                        builder: (BuildContext context) =>
-                            defaultButton(
-                              function: () {
-                                ShopLoginCubit.get(context).userLogin(
-                                  email: emailController.text,
-                                  password: passwordController.text,);
-                              },
-                              text: 'login',
-                              isUpperCase: true,
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'LOGIN',
+                          style: Theme
+                              .of(context)
+                              .textTheme
+                              .headline4
+                              ?.copyWith(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        Text(
+                          'Login now to browse our hot offers',
+                          style: Theme
+                              .of(context)
+                              .textTheme
+                              .bodyText2
+                              ?.copyWith(color: Colors.black),
+                        ),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        defaultFormField(
+                          controller: emailController,
+                          type: TextInputType.emailAddress,
+                          validate: (value) {
+                            if (value!.isEmpty) {
+                              return 'please enter your email address';
+                            }
+                          },
+                          label: 'Email Address',
+                          prefix: Icons.email_outlined,
+                        ),
+                        const SizedBox(
+                          height: 15.0,
+                        ),
+                        defaultFormField(
+                          controller: passwordController,
+                          type: TextInputType.visiblePassword,
+                          suffix: Icons.visibility,
+                          suffixPressed: () {},
+                          validate: (value) {
+                            if (value!.isEmpty) {
+                              return 'password is too short';
+                            }
+                          },
+                          label: 'Password',
+                          prefix: Icons.lock_outline,
+                        ),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        ConditionalBuilder(
+                          condition: state is! ShopLoginLoadingState,
+                          builder: (BuildContext context) =>
+                              defaultButton(
+                                function: () {
+                                  ShopLoginCubit.get(context).userLogin(
+                                    email: emailController.text,
+                                    password: passwordController.text,);
+                                },
+                                text: 'login',
+                                isUpperCase: true,
+                              ),
+                          fallback: (BuildContext context) =>
+                          const Center(child: CircularProgressIndicator()),
+                        ),
+                        const SizedBox(
+                          height: 15.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'Don\'t have an account?',
                             ),
-                        fallback: (BuildContext context) =>
-                        const Center(child: CircularProgressIndicator()),
-                      ),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Don\'t have an account?',
-                          ),
-                          defaultTextButton(
-                            function: () {
-                              navigateTo(
-                                context,
-                                ShopRegisterScreen(),
-                              );
-                            },
-                            text: ('register'),
-                          ),
-                        ],
-                      ),
-                    ],
+                            defaultTextButton(
+                              function: () {
+                                navigateTo(
+                                  context,
+                                  ShopRegisterScreen(),
+                                );
+                              },
+                              text: ('register'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
