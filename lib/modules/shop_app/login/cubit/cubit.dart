@@ -10,12 +10,15 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
 
   static ShopLoginCubit get(context) => BlocProvider.of(context);
 
-  void userLogin() {
+  void userLogin({
+    required String email,
+    required String password,
+  }) {
     DioHelper.postData(
       url: LOGIN,
       data: {
-        'email': '',
-        'password': '',
+        'email': email,
+        'password': password,
       },
     );
   }
