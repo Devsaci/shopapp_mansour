@@ -10,6 +10,6 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
   static ShopLoginCubit get(context) => BlocProvider.of(context);
 
   void userLogin() {
-    DioHelper();
+    DioHelper.postData(url: 'url', data: null );
   }
 }
