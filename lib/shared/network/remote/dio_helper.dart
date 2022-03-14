@@ -32,10 +32,12 @@ class DioHelper {
     Map<String, dynamic>? query,
     required Map<String, dynamic>? data,
     String lang = 'ar',
+    String? token,
   }) async {
     dio.options = BaseOptions(
       headers: {
         'lang': lang,
+        'Authorization': token,
       },
     );
     return dio.post(
