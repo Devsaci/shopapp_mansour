@@ -88,7 +88,7 @@ class ShopLoginScreen extends StatelessWidget {
                           condition: state is! ShopLoginLoadingState,
                           builder: (BuildContext context) => defaultButton(
                             function: () {
-                              if (formKey.currentState!.validate()) {  // null safety
+                              if (formKey.currentState!.validate()) {
                                 ShopLoginCubit.get(context).userLogin(
                                   email: emailController.text,
                                   password: passwordController.text,

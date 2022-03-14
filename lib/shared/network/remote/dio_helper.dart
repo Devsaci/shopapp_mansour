@@ -23,12 +23,12 @@ class DioHelper {
     String lang = 'ar',
     String? token,
   }) async {
-    dio.options = BaseOptions(
-      headers: {
-        'lang': lang,
-        'Authorization': token,
-      },
-    );
+    dio.options.headers =
+    {
+      'Content-Type':'application/json',
+      'lang':lang,
+      'Authorization': token??'',
+    };
     return await dio.get(
       url!,
       queryParameters: query,
@@ -42,12 +42,12 @@ class DioHelper {
     String lang = 'ar',
     String? token,
   }) async {
-    dio.options = BaseOptions(
-      headers: {
-        'lang': lang,
-        'Authorization': token,
-      },
-    );
+    dio.options.headers =
+    {
+      'Content-Type':'application/json',
+      'lang':lang,
+      'Authorization': token??'',
+    };
     return dio.post(
       url!,
       queryParameters: query,
