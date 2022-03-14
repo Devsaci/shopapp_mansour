@@ -10,7 +10,7 @@ import 'cubit/states.dart';
 
 class ShopLoginScreen extends StatelessWidget {
   ShopLoginScreen({Key? key}) : super(key: key);
-
+  var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
