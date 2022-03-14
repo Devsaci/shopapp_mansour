@@ -1,4 +1,5 @@
 import 'package:app_theme_mansour/shared/components/components.dart';
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,7 +35,7 @@ class ShopLoginScreen extends StatelessWidget {
                         style: Theme.of(context).textTheme.headline4?.copyWith(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       Text(
@@ -77,10 +78,15 @@ class ShopLoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 30.0,
                       ),
-                      defaultButton(
-                        function: () {},
-                        text: 'login',
-                        isUpperCase: true,
+                      ConditionalBuilder(
+                        condition: true,
+                        builder: (BuildContext context) => defaultButton(
+                          function: () {},
+                          text: 'login',
+                          isUpperCase: true,
+                        ),
+                        fallback: (BuildContext context) =>
+                            const Center(child:  CircularProgressIndicator()),
                       ),
                       const SizedBox(
                         height: 15.0,
