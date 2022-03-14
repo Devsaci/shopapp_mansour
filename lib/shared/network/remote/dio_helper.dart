@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class DioHelper {
-  static  late Dio dio;
+  static late Dio dio;
 
   static init() {
     dio = Dio(
@@ -10,6 +10,9 @@ class DioHelper {
         //https://www.getpostman.com/collections/3223d639447a8524e38f
         baseUrl: 'https://student.valuxapps.com/api/',
         receiveDataWhenStatusError: true,
+        headers: {
+          'Content-Type': 'application/json',
+        },
       ),
     );
   }
