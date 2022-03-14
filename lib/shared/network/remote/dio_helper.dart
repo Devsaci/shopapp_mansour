@@ -20,7 +20,15 @@ class DioHelper {
   static Future<Response> getData({
     required String? url,
     required Map<String, dynamic>? query,
+    String lang = 'ar',
+    String? token,
   }) async {
+    dio.options = BaseOptions(
+      headers: {
+        'lang': lang,
+        'Authorization': token,
+      },
+    );
     return await dio.get(
       url!,
       queryParameters: query,
