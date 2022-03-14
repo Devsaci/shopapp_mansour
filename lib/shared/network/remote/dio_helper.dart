@@ -26,4 +26,8 @@ class DioHelper {
       queryParameters: query,
     );
   }
+
+  static Future<Response> postData() async {
+    return dio.post('path',);
+  }
 }
