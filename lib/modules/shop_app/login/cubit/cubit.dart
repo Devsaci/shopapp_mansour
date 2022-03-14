@@ -23,6 +23,7 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
     ).then(
       (value) {
         print(value.data);
+        emit(state);
       },
     );
   }
