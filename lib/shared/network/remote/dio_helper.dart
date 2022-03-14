@@ -29,11 +29,10 @@ class DioHelper {
 
   static Future<Response> postData({
     required String? url,
-    required Map<String, dynamic>? query,
-}) async {
+    Map<String, dynamic>? query,
+  }) async {
     return dio.post(
       url!,
-
     );
   }
 }
