@@ -8,7 +8,7 @@ import 'cubit/cubit.dart';
 import 'cubit/states.dart';
 
 class ShopLoginScreen extends StatelessWidget {
-  ShopLoginScreen({Key? key}) : super(key: key);
+  // ShopLoginScreen({Key? key}) : super(key: key);
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -63,6 +63,7 @@ class ShopLoginScreen extends StatelessWidget {
                             if (value!.isEmpty) {
                               return 'please enter your email address';
                             }
+                            return null;
                           },
                           label: 'Email Address',
                           prefix: Icons.email_outlined,
@@ -88,6 +89,7 @@ class ShopLoginScreen extends StatelessWidget {
                             if (value!.isEmpty) {
                               return 'password is too short';
                             }
+                            return null;
                           },
                           label: 'Password',
                           prefix: Icons.lock_outline,
