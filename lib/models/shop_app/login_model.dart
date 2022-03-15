@@ -1,7 +1,7 @@
 class ShopLoginModel {
   late bool status;
   late String message;
-  late UserData  data;
+  late UserData data;
 }
 
 class UserData {
@@ -14,4 +14,14 @@ class UserData {
   late int credit;
   late String token;
 
+  UserData({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.phone,
+    required this.image,
+    required this.points,
+    required this.credit,
+    required this.token,
+  });
 }
