@@ -24,4 +24,7 @@ class UserData {
     required this.credit,
     required this.token,
   });
+// named constructor
+  UserData.name(this.id, this.name, this.email, this.phone, this.image,
+      this.points, this.credit, this.token);
 }
