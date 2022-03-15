@@ -74,7 +74,7 @@ class ShopLoginScreen extends StatelessWidget {
                         defaultFormField(
                           controller: passwordController,
                           type: TextInputType.visiblePassword,
-                          suffix: Icons.visibility,
+                          suffix: ShopLoginCubit.get(context).suffix,
                           onSubmit: (value) {
                             if (formKey.currentState!.validate()) {
                               ShopLoginCubit.get(context).userLogin(
@@ -83,8 +83,11 @@ class ShopLoginScreen extends StatelessWidget {
                               );
                             }
                           },
-                          suffixPressed: () {},
-                          isPassword: true,
+                          suffixPressed: () {
+                            ShopLoginCubit.get(context)
+                                .changePasswordVisibility();
+                          },
+                          isPassword: ShopLoginCubit.get(context).isPassword,
                           validate: (value) {
                             if (value!.isEmpty) {
                               return 'password is too short';
