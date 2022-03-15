@@ -34,19 +34,21 @@ class ShopLoginScreen extends StatelessWidget {
                       children: [
                         Text(
                           'LOGIN',
-                          style: Theme.of(context)
+                          style: Theme
+                              .of(context)
                               .textTheme
                               .headline4
                               ?.copyWith(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(
                           height: 30.0,
                         ),
                         Text(
                           'Login now to browse our hot offers',
-                          style: Theme.of(context)
+                          style: Theme
+                              .of(context)
                               .textTheme
                               .bodyText2
                               ?.copyWith(color: Colors.black),
@@ -72,7 +74,7 @@ class ShopLoginScreen extends StatelessWidget {
                           controller: passwordController,
                           type: TextInputType.visiblePassword,
                           suffix: Icons.visibility,
-                          onSubmit: (value){
+                          onSubmit: (value) {
                             if (formKey.currentState!.validate()) {
                               ShopLoginCubit.get(context).userLogin(
                                 email: emailController.text,
@@ -81,6 +83,7 @@ class ShopLoginScreen extends StatelessWidget {
                             }
                           },
                           suffixPressed: () {},
+                          isPassword: true,
                           validate: (value) {
                             if (value!.isEmpty) {
                               return 'password is too short';
@@ -94,20 +97,21 @@ class ShopLoginScreen extends StatelessWidget {
                         ),
                         ConditionalBuilder(
                           condition: state is! ShopLoginLoadingState,
-                          builder: (BuildContext context) => defaultButton(
-                            function: () {
-                              if (formKey.currentState!.validate()) {
-                                ShopLoginCubit.get(context).userLogin(
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                );
-                              }
-                            },
-                            text: 'login',
-                            isUpperCase: true,
-                          ),
+                          builder: (BuildContext context) =>
+                              defaultButton(
+                                function: () {
+                                  if (formKey.currentState!.validate()) {
+                                    ShopLoginCubit.get(context).userLogin(
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                    );
+                                  }
+                                },
+                                text: 'login',
+                                isUpperCase: true,
+                              ),
                           fallback: (BuildContext context) =>
-                              const Center(child: CircularProgressIndicator()),
+                          const Center(child: CircularProgressIndicator()),
                         ),
                         const SizedBox(
                           height: 15.0,
