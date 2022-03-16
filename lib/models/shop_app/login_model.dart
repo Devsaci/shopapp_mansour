@@ -2,6 +2,13 @@ class ShopLoginModel {
   late bool status;
   late String message;
   late UserData data;
+
+  ShopLoginModel.fromJson(Map<String, dynamic> json){
+    status = json['status'];
+    message = json['message'];
+    data = json['data'];
+  }
+
 }
 
 class UserData {
@@ -14,16 +21,16 @@ class UserData {
   late int credit;
   late String token;
 
-  UserData({
-    required this.id,
-    required this.name,
-    required this.email,
-    required this.phone,
-    required this.image,
-    required this.points,
-    required this.credit,
-    required this.token,
-  });
+  // UserData({
+  //   required this.id,
+  //   required this.name,
+  //   required this.email,
+  //   required this.phone,
+  //   required this.image,
+  //   required this.points,
+  //   required this.credit,
+  //   required this.token,
+  // });
 
 // named constructor
   UserData.fromJson(Map<String, dynamic> json){

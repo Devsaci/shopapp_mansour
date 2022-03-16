@@ -1,3 +1,4 @@
+import 'package:app_theme_mansour/models/shop_app/login_model.dart';
 import 'package:app_theme_mansour/modules/shop_app/login/cubit/states.dart';
 import 'package:app_theme_mansour/shared/network/end_points.dart';
 import 'package:app_theme_mansour/shared/network/remote/dio_helper.dart';
@@ -25,6 +26,7 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
     ).then(
       (value) {
         print(value.data);
+        UserData.fromJson(value.data);
         print(value.data['message']);
         emit(ShopLoginSuccessState());
       },
