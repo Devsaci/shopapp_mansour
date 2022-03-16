@@ -12,7 +12,7 @@ class ShopLoginSuccessState extends ShopLoginStates {
   // ShopLoginSuccessState(ShopLoginModel loginModel);
     ShopLoginSuccessState(this.loginModel);
 }
-}
+
 
 class ShopLoginErrorState extends ShopLoginStates {
   final String error;
