@@ -26,7 +26,7 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
     ).then(
       (value) {
         print(value.data);
-        UserData.fromJson(value.data);
+        ShopLoginModel.fromJson(value.data);
         print(value.data['message']);
         emit(ShopLoginSuccessState());
       },
