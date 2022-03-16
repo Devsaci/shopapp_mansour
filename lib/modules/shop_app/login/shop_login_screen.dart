@@ -2,6 +2,7 @@ import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../register/shop_register_screen.dart';
 import 'cubit/cubit.dart';
@@ -20,17 +21,23 @@ class ShopLoginScreen extends StatelessWidget {
       create: (BuildContext context) => ShopLoginCubit(),
       child: BlocConsumer<ShopLoginCubit, ShopLoginStates>(
         listener: (context, state) {
-          if (state is ShopLoginSuccessState)
-            {
-              if (state.loginModel.status)
-                {
-                  print(state.loginModel.message);
-                  print(state.loginModel.data.token);
-                }else
-                {
-                  print(state.loginModel.message);
-                }
+          if (state is ShopLoginSuccessState) {
+            if (state.loginModel.status) {
+              print(state.loginModel.message);
+              print(state.loginModel.data.token);
+            } else {
+              print(state.loginModel.message);
+              Fluttertoast.showToast(
+                msg: '',
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0,
+              );
             }
+          }
         },
         builder: (context, state) {
           return Scaffold(
@@ -46,21 +53,19 @@ class ShopLoginScreen extends StatelessWidget {
                       children: [
                         Text(
                           'LOGIN',
-                          style: Theme
-                              .of(context)
+                          style: Theme.of(context)
                               .textTheme
                               .headline4
                               ?.copyWith(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(
                           height: 30.0,
                         ),
                         Text(
                           'Login now to browse our hot offers',
-                          style: Theme
-                              .of(context)
+                          style: Theme.of(context)
                               .textTheme
                               .bodyText2
                               ?.copyWith(color: Colors.black),
@@ -114,21 +119,20 @@ class ShopLoginScreen extends StatelessWidget {
                         ),
                         ConditionalBuilder(
                           condition: state is! ShopLoginLoadingState,
-                          builder: (BuildContext context) =>
-                              defaultButton(
-                                function: () {
-                                  if (formKey.currentState!.validate()) {
-                                    ShopLoginCubit.get(context).userLogin(
-                                      email: emailController.text,
-                                      password: passwordController.text,
-                                    );
-                                  }
-                                },
-                                text: 'login',
-                                isUpperCase: true,
-                              ),
+                          builder: (BuildContext context) => defaultButton(
+                            function: () {
+                              if (formKey.currentState!.validate()) {
+                                ShopLoginCubit.get(context).userLogin(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                );
+                              }
+                            },
+                            text: 'login',
+                            isUpperCase: true,
+                          ),
                           fallback: (BuildContext context) =>
-                          const Center(child: CircularProgressIndicator()),
+                              const Center(child: CircularProgressIndicator()),
                         ),
                         const SizedBox(
                           height: 15.0,

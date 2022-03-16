@@ -42,7 +42,7 @@ dependencies:
   shared_preferences: ^2.0.13
   webview_flutter: ^3.0.1
   smooth_page_indicator:
-  fluttertoast:
+  fluttertoast: ^8.0.3
 
 dev_dependencies:
   flutter_test:
