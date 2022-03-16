@@ -11,6 +11,7 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
   ShopLoginCubit() : super(ShopLoginInitialState());
 
   static ShopLoginCubit get(context) => BlocProvider.of(context);
+  ShopLoginModel? loginModel;
 
   void userLogin({
     required String email,
