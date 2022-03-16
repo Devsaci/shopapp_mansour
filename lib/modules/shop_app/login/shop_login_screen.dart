@@ -25,13 +25,23 @@ class ShopLoginScreen extends StatelessWidget {
             if (state.loginModel.status) {
               print(state.loginModel.message);
               print(state.loginModel.data.token);
+              Fluttertoast.showToast(
+                msg: state.loginModel.message,
+                toastLength: Toast.LENGTH_LONG,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 5,
+                backgroundColor: Colors.green,
+                textColor: Colors.white,
+                fontSize: 16.0,
+              );
             } else {
               print(state.loginModel.message);
+
               Fluttertoast.showToast(
-                msg: '',
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.CENTER,
-                timeInSecForIosWeb: 1,
+                msg: state.loginModel.message,
+                toastLength: Toast.LENGTH_LONG,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 5,
                 backgroundColor: Colors.red,
                 textColor: Colors.white,
                 fontSize: 16.0,
