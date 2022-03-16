@@ -26,6 +26,9 @@ class ShopLoginScreen extends StatelessWidget {
                 {
                   print(state.loginModel.message);
                   print(state.loginModel.data.token);
+                }else
+                {
+                  print(state.loginModel.message);
                 }
             }
         },
