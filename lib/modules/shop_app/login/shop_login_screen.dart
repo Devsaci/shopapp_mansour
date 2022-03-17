@@ -20,9 +20,12 @@ class ShopLoginScreen extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => ShopLoginCubit(),
       child: BlocConsumer<ShopLoginCubit, ShopLoginStates>(
-        listener: (context, state) {
+        listener: (BuildContext context, ShopLoginStates state) {
           if (state is ShopLoginSuccessState) {
             if (state.loginModel.status) {
+              print(
+                  '-------------  state.loginModel.message  *****************');
+              print(state.loginModel.status);
               print(state.loginModel.message);
               print(state.loginModel.data.token);
               Fluttertoast.showToast(
@@ -30,23 +33,16 @@ class ShopLoginScreen extends StatelessWidget {
                 toastLength: Toast.LENGTH_LONG,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIosWeb: 5,
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.black,
                 textColor: Colors.white,
                 fontSize: 16.0,
               );
-            } else {
-              print(state.loginModel.message);
-
-              Fluttertoast.showToast(
-                msg: state.loginModel.message,
-                toastLength: Toast.LENGTH_LONG,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 5,
-                backgroundColor: Colors.red,
-                textColor: Colors.white,
-                fontSize: 16.0,
-              );
+            } else{
+              print('-------------state.loginModel.message*****************');
+              print(state.loginModel.status);
+              print('-------------state.loginModel.message*****************');
             }
+
           }
         },
         builder: (context, state) {
@@ -138,7 +134,7 @@ class ShopLoginScreen extends StatelessWidget {
                                 );
                               }
                             },
-                            text: 'login',
+                            text: ('login'),
                             isUpperCase: true,
                           ),
                           fallback: (BuildContext context) =>
