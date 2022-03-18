@@ -27,7 +27,7 @@ class DioHelper {
     {
       'Content-Type':'application/json',
       'lang':lang,
-      'Authorization': token??'',
+      'Authorization': token,
     };
     return await dio.get(
       url!,
@@ -46,7 +46,7 @@ class DioHelper {
     {
       'Content-Type':'application/json',
       'lang':lang,
-      'Authorization': token??'',
+      'Authorization': token,
     };
     return dio.post(
       url!,
