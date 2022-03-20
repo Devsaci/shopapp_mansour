@@ -45,6 +45,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   ];
   bool isLast = false;
 
+  void submit() {
+    navigateAndFinish(
+      context,
+      ShopLoginScreen(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +59,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         actions: [
           defaultTextButton(
             function: () {
+              // void submit()
               navigateAndFinish(
                 context,
-                 ShopLoginScreen(),
+                ShopLoginScreen(),
               );
             },
             text: ('SKIP'),
@@ -109,7 +117,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 FloatingActionButton(
                   onPressed: () {
                     if (isLast) {
-                      navigateAndFinish(context,  ShopLoginScreen());
+                      // void submit()
+                      navigateAndFinish(
+                        context,
+                        ShopLoginScreen(),
+                      );
                     } else {
                       boardController.nextPage(
                         duration: const Duration(milliseconds: 750),

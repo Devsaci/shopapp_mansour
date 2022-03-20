@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             themeMode: NewsCubit.get(context).isDark
                 ? ThemeMode.light
                 : ThemeMode.dark,
-            home: ShopLoginScreen(),
+            home: OnBoardingScreen(),
             // home: NewsLayout(),
           );
         },
