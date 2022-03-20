@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../../layout/shop_app/shop_layout.dart';
+import '../../../shared/network/local/cache_helper.dart';
 import '../register/shop_register_screen.dart';
 import 'cubit/cubit.dart';
 import 'cubit/states.dart';
@@ -28,10 +30,15 @@ class ShopLoginScreen extends StatelessWidget {
               print(state.loginModel.status);
               print(state.loginModel.message);
               print(state.loginModel.data.token);
-              showToast(
-                text: state.loginModel.message,
-                state: ToastStates.SUCCESS,
-              );
+              CacheHelper.saveData(
+                key: 'token',
+                value: state.loginModel.data.token,
+              ).then((value) {
+                navigateAndFinish(
+                  context,
+                  ShopLayout(),
+                );
+              });
             } else {
               print('-------------state.loginModel.message*****************');
               print(state.loginModel.status);
