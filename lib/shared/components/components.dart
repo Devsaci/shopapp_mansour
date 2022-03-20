@@ -226,6 +226,5 @@ Color chooseToastColor(ToastStates state) {
       color = Colors.amber;
       break;
   }
-
   return color;
 }
