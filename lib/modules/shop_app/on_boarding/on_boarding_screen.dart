@@ -66,13 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       appBar: AppBar(
         actions: [
           defaultTextButton(
-            function: () {
-              // void submit()
-              navigateAndFinish(
-                context,
-                ShopLoginScreen(),
-              );
-            },
+            function: submit,
             text: ('SKIP'),
           ),
         ],
@@ -125,11 +119,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 FloatingActionButton(
                   onPressed: () {
                     if (isLast) {
-                      // void submit()
-                      navigateAndFinish(
-                        context,
-                        ShopLoginScreen(),
-                      );
+                      submit();
                     } else {
                       boardController.nextPage(
                         duration: const Duration(milliseconds: 750),
