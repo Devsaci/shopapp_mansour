@@ -23,7 +23,7 @@ class ShopLayout extends StatelessWidget {
             }
           });
         },
-        child: Text('SING OUT'),
+        child: const Center(child: Text('SING OUT')),
       ),
     );
   }
