@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
 
 class ShopLayout extends StatelessWidget {
@@ -12,7 +13,9 @@ class ShopLayout extends StatelessWidget {
         title: Text('Salla'),
       ),
       body: TextButton(
-        onPressed: (){},
+        onPressed: (){
+          CacheHelper.removeData(key: 'token');
+        },
         child: Text('SING OUT'),
       ),
     );
