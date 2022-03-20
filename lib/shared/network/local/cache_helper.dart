@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
   static late SharedPreferences sharedPreferences;
 
-  static init() async  // [ERROR:flutter/lib/ui/ui_dart_state.cc(209)]
-  // Unhandled Exception: Null check operator used on a null value
+  static init() async
   {
     sharedPreferences = await SharedPreferences.getInstance();
   }
@@ -14,7 +12,7 @@ class CacheHelper {
     required String key,
     required bool value,
   }) async {
-    return await sharedPreferences.setBool('isDark', value);
+    return await sharedPreferences.setBool(key, value);
   }
 
   static bool? getBoolean({required String key}) {
