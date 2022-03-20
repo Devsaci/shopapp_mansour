@@ -2,16 +2,18 @@
 
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../modules/news_app/web_view/web_view_screen.dart';
 
 Widget defaultTextButton({
   required Function() function,
   required String text,
-}) => TextButton(
-    onPressed: function,
-    child: Text(text.toUpperCase()),
-  );
+}) =>
+    TextButton(
+      onPressed: function,
+      child: Text(text.toUpperCase()),
+    );
 
 Widget defaultFormField({
   TextEditingController? controller,
@@ -51,19 +53,20 @@ Widget defaultFormField({
         ),
         suffixIcon: suffix != null
             ? IconButton(
-                onPressed: () {
-                  suffixPressed!();
-                },
-                icon: Icon(
-                  suffix,
-                ),
-              )
+          onPressed: () {
+            suffixPressed!();
+          },
+          icon: Icon(
+            suffix,
+          ),
+        )
             : null,
         border: OutlineInputBorder(),
       ),
     );
 
-Widget buildArticleItem(article, context) => InkWell(
+Widget buildArticleItem(article, context) =>
+    InkWell(
       onTap: () {
         navigateTo(context, WebViewScreen(article['url']));
       },
@@ -97,7 +100,10 @@ Widget buildArticleItem(article, context) => InkWell(
                     Expanded(
                       child: Text(
                         '${article['title']}',
-                        style: Theme.of(context).textTheme.bodyText1,
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .bodyText1,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -118,7 +124,8 @@ Widget buildArticleItem(article, context) => InkWell(
       ),
     );
 
-Widget myDivider() => Padding(
+Widget myDivider() =>
+    Padding(
       padding: const EdgeInsetsDirectional.only(
         start: 20.0,
       ),
@@ -129,41 +136,44 @@ Widget myDivider() => Padding(
       ),
     );
 
-Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
+Widget articleBuilder(list, context, {isSearch = false}) =>
+    ConditionalBuilder(
       condition: list.length > 0,
-      builder: (BuildContext context) => ListView.separated(
-        physics: BouncingScrollPhysics(),
-        itemBuilder: (context, index) => buildArticleItem(list[index], context),
-        separatorBuilder: (context, index) => myDivider(),
-        itemCount: 10,
-      ),
-      fallback: (BuildContext context) => isSearch
+      builder: (BuildContext context) =>
+          ListView.separated(
+            physics: BouncingScrollPhysics(),
+            itemBuilder: (context, index) =>
+                buildArticleItem(list[index], context),
+            separatorBuilder: (context, index) => myDivider(),
+            itemCount: 10,
+          ),
+      fallback: (BuildContext context) =>
+      isSearch
           ? Center(
-              child: Container(
-                  child: Text('In Progress Wait PLease'), color: Colors.amber),
-            )
+        child: Container(
+            child: Text('In Progress Wait PLease'), color: Colors.amber),
+      )
           : Center(
-              child: CircularProgressIndicator(),
-            ),
+        child: CircularProgressIndicator(),
+      ),
     );
 
-void navigateTo(context, widget) => Navigator.push(
+void navigateTo(context, widget) =>
+    Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => widget,
       ),
     );
 
-void navigateAndFinish(
-  context,
-  widget,
-) =>
+void navigateAndFinish(context,
+    widget,) =>
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
         builder: (context) => widget,
       ),
-      (route) {
+          (route) {
         return false;
       },
     );
@@ -194,4 +204,18 @@ Widget defaultButton({
         ),
         color: background,
       ),
+    );
+
+
+void showToast({
+  required String text,
+}) =>
+    Fluttertoast.showToast(
+      msg: text,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 5,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0,
     );
