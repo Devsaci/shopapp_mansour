@@ -53,20 +53,19 @@ Widget defaultFormField({
         ),
         suffixIcon: suffix != null
             ? IconButton(
-          onPressed: () {
-            suffixPressed!();
-          },
-          icon: Icon(
-            suffix,
-          ),
-        )
+                onPressed: () {
+                  suffixPressed!();
+                },
+                icon: Icon(
+                  suffix,
+                ),
+              )
             : null,
         border: OutlineInputBorder(),
       ),
     );
 
-Widget buildArticleItem(article, context) =>
-    InkWell(
+Widget buildArticleItem(article, context) => InkWell(
       onTap: () {
         navigateTo(context, WebViewScreen(article['url']));
       },
@@ -100,10 +99,7 @@ Widget buildArticleItem(article, context) =>
                     Expanded(
                       child: Text(
                         '${article['title']}',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .bodyText1,
+                        style: Theme.of(context).textTheme.bodyText1,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -124,8 +120,7 @@ Widget buildArticleItem(article, context) =>
       ),
     );
 
-Widget myDivider() =>
-    Padding(
+Widget myDivider() => Padding(
       padding: const EdgeInsetsDirectional.only(
         start: 20.0,
       ),
@@ -136,44 +131,41 @@ Widget myDivider() =>
       ),
     );
 
-Widget articleBuilder(list, context, {isSearch = false}) =>
-    ConditionalBuilder(
+Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
       condition: list.length > 0,
-      builder: (BuildContext context) =>
-          ListView.separated(
-            physics: BouncingScrollPhysics(),
-            itemBuilder: (context, index) =>
-                buildArticleItem(list[index], context),
-            separatorBuilder: (context, index) => myDivider(),
-            itemCount: 10,
-          ),
-      fallback: (BuildContext context) =>
-      isSearch
-          ? Center(
-        child: Container(
-            child: Text('In Progress Wait PLease'), color: Colors.amber),
-      )
-          : Center(
-        child: CircularProgressIndicator(),
+      builder: (BuildContext context) => ListView.separated(
+        physics: BouncingScrollPhysics(),
+        itemBuilder: (context, index) => buildArticleItem(list[index], context),
+        separatorBuilder: (context, index) => myDivider(),
+        itemCount: 10,
       ),
+      fallback: (BuildContext context) => isSearch
+          ? Center(
+              child: Container(
+                  child: Text('In Progress Wait PLease'), color: Colors.amber),
+            )
+          : Center(
+              child: CircularProgressIndicator(),
+            ),
     );
 
-void navigateTo(context, widget) =>
-    Navigator.push(
+void navigateTo(context, widget) => Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => widget,
       ),
     );
 
-void navigateAndFinish(context,
-    widget,) =>
+void navigateAndFinish(
+  context,
+  widget,
+) =>
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
         builder: (context) => widget,
       ),
-          (route) {
+      (route) {
         return false;
       },
     );
@@ -206,7 +198,6 @@ Widget defaultButton({
       ),
     );
 
-
 void showToast({
   required String text,
 }) =>
@@ -219,3 +210,4 @@ void showToast({
       textColor: Colors.white,
       fontSize: 16.0,
     );
+enum ToastStates { SUCCESS, ERROR, WARNING }
