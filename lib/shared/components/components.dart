@@ -200,6 +200,9 @@ Widget defaultButton({
 
 void showToast({
   required String text,
+  required  ToastStates state,
+
+
 }) =>
     Fluttertoast.showToast(
       msg: text,
