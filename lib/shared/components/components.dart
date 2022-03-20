@@ -200,9 +200,7 @@ Widget defaultButton({
 
 void showToast({
   required String text,
-  required  ToastStates state,
-
-
+  required ToastStates state,
 }) =>
     Fluttertoast.showToast(
       msg: text,
@@ -214,3 +212,20 @@ void showToast({
       fontSize: 16.0,
     );
 enum ToastStates { SUCCESS, ERROR, WARNING }
+
+Color chooseToastColor(ToastStates state) {
+  Color color;
+  switch (state) {
+    case ToastStates.SUCCESS:
+      color = Colors.green;
+      break;
+    case ToastStates.ERROR:
+      color = Colors.red;
+      break;
+    case ToastStates.WARNING:
+      color = Colors.amber;
+      break;
+  }
+
+  return color;
+}
