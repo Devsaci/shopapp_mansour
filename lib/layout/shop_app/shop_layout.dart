@@ -14,7 +14,7 @@ class ShopLayout extends StatelessWidget {
       ),
       body: TextButton(
         onPressed: (){
-          CacheHelper.removeData(key: 'token');
+          CacheHelper.removeData(key: 'token').then((value) => null);
         },
         child: Text('SING OUT'),
       ),
