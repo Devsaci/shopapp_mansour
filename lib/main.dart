@@ -22,9 +22,10 @@ void main() {
       await CacheHelper.init();
       bool isDark = CacheHelper.getData(key: 'isDark');
       bool onBoarding = CacheHelper.getData(key: 'onBoarding');
+      var startWidget;
       runApp(MyApp(
         isDark: isDark,
-        onBoarding: onBoarding,
+        startWidget: startWidget ,
       ));
     },
     blocObserver: MyBlocObserver(),
@@ -33,11 +34,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   final bool isDark;
-  final bool onBoarding;
+  final Widget  startWidget;
 
   MyApp({
     required this.isDark,
-    required this.onBoarding,
+    required this.startWidget,
   });
 
   @override
@@ -60,7 +61,8 @@ class MyApp extends StatelessWidget {
             themeMode: NewsCubit.get(context).isDark
                 ? ThemeMode.light
                 : ThemeMode.dark,
-            home: onBoarding ? ShopLoginScreen() : OnBoardingScreen(),
+            // home: onBoarding ? ShopLoginScreen() : OnBoardingScreen(),
+            home: startWidget,
             // home: NewsLayout(),
           );
         },
