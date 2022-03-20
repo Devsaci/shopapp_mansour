@@ -23,6 +23,8 @@ class ShopLoginScreen extends StatelessWidget {
         listener: (BuildContext context, ShopLoginStates state) {
           if (state is ShopLoginSuccessState) {
             if (state.loginModel.status) {
+              print(
+                  '-------------  state.loginModel.message  *****************');
               print(state.loginModel.status);
               print(state.loginModel.message);
               print(state.loginModel.data.token);
@@ -35,8 +37,10 @@ class ShopLoginScreen extends StatelessWidget {
                 textColor: Colors.white,
                 fontSize: 16.0,
               );
-            } else {
+            } else{
+              print('-------------state.loginModel.message*****************');
               print(state.loginModel.status);
+              print('-------------state.loginModel.message*****************');
               Fluttertoast.showToast(
                 msg: state.loginModel.message,
                 toastLength: Toast.LENGTH_LONG,
@@ -47,6 +51,7 @@ class ShopLoginScreen extends StatelessWidget {
                 fontSize: 16.0,
               );
             }
+
           }
         },
         builder: (context, state) {
