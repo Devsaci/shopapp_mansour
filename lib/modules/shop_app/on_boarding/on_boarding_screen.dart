@@ -1,5 +1,6 @@
 import 'package:app_theme_mansour/modules/shop_app/login/shop_login_screen.dart';
 import 'package:app_theme_mansour/shared/components/components.dart';
+import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
 import 'package:app_theme_mansour/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -46,6 +47,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   bool isLast = false;
 
   void submit() {
+    CacheHelper.saveData(
+      key: "onBoarding",
+      value: true,
+    );
     navigateAndFinish(
       context,
       ShopLoginScreen(),
