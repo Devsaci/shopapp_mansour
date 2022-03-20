@@ -20,7 +20,10 @@ void main() {
       WidgetsFlutterBinding.ensureInitialized();
       DioHelper.init();
       await CacheHelper.init();
-      bool? isDark = CacheHelper.getBoolean(key: 'isDark');
+      bool? isDark = CacheHelper.getData(key: 'isDark');
+      bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
+      print('onBoarding/////////////////////////////////////////////////');
+      print(onBoarding);
       runApp(MyApp(isDark));
     },
     blocObserver: MyBlocObserver(),
