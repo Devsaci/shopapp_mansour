@@ -20,20 +20,25 @@ void main() {
       WidgetsFlutterBinding.ensureInitialized();
       DioHelper.init();
       await CacheHelper.init();
-      bool? isDark = CacheHelper.getData(key: 'isDark');
-      bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
-      runApp(MyApp(isDark));
+      bool isDark = CacheHelper.getData(key: 'isDark');
+      bool onBoarding = CacheHelper.getData(key: 'onBoarding');
+      runApp(MyApp(
+        isDark: isDark,
+        onBoarding: onBoarding,
+      ));
     },
     blocObserver: MyBlocObserver(),
   );
 }
 
 class MyApp extends StatelessWidget {
- final  bool? isDark;
- final  bool? onBoarding;
+  final bool isDark;
+  final bool onBoarding;
 
-
-  MyApp(this.isDark);
+  MyApp({
+    required this.isDark,
+    required this.onBoarding,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +60,7 @@ class MyApp extends StatelessWidget {
             themeMode: NewsCubit.get(context).isDark
                 ? ThemeMode.light
                 : ThemeMode.dark,
-            home: OnBoardingScreen(),
+            home: onBoarding ? ShopLoginScreen() : OnBoardingScreen(),
             // home: NewsLayout(),
           );
         },
