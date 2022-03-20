@@ -50,7 +50,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     CacheHelper.saveData(
       key: "onBoarding",
       value: true,
-    ).then((value) => null);
+    ).then((value) {});
     navigateAndFinish(
       context,
       ShopLoginScreen(),
