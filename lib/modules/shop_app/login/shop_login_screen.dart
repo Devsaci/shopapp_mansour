@@ -37,7 +37,7 @@ class ShopLoginScreen extends StatelessWidget {
                 textColor: Colors.white,
                 fontSize: 16.0,
               );
-            } else{
+            } else {
               print('-------------state.loginModel.message*****************');
               print(state.loginModel.status);
               print('-------------state.loginModel.message*****************');
@@ -51,7 +51,6 @@ class ShopLoginScreen extends StatelessWidget {
                 fontSize: 16.0,
               );
             }
-
           }
         },
         builder: (context, state) {
