@@ -33,12 +33,14 @@ class ShopLoginScreen extends StatelessWidget {
               CacheHelper.saveData(
                 key: 'token',
                 value: state.loginModel.data.token,
-              ).then((value) {
-                navigateAndFinish(
-                  context,
-                  ShopLayout(),
-                );
-              });
+              ).then(
+                (value) {
+                  navigateAndFinish(
+                    context,
+                    ShopLayout(),
+                  );
+                },
+              );
             } else {
               print('-------------state.loginModel.message*****************');
               print(state.loginModel.status);
