@@ -22,8 +22,8 @@ class CacheHelper {
     required String key,
     required dynamic value,
   }) async {
-    if (value is String)   return await sharedPreferences.setString(key, value);
-
+    if (value is String) return await sharedPreferences.setString(key, value);
+    if (value is int) return await sharedPreferences.setInt(key, value);
     return await sharedPreferences.setDouble(key, value);
   }
 }
