@@ -1,5 +1,7 @@
 
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class ShopLayout  extends StatelessWidget {
@@ -7,6 +9,10 @@ class ShopLayout  extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Salla'),
+      ),
+    );
   }
 }
