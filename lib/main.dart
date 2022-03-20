@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'layout/news_app/news_layout.dart';
+import 'layout/shop_app/shop_layout.dart';
 import 'modules/shop_app/login/shop_login_screen.dart';
 import 'modules/shop_app/on_boarding/on_boarding_screen.dart';
 import 'shared/bloc_observer.dart';
@@ -20,12 +21,25 @@ void main() {
       WidgetsFlutterBinding.ensureInitialized();
       DioHelper.init();
       await CacheHelper.init();
-      bool isDark = CacheHelper.getData(key: 'isDark');
-      bool onBoarding = CacheHelper.getData(key: 'onBoarding');
-      var startWidget;
+      bool? isDark = CacheHelper.getData(key: 'isDark');
+      Widget widget;
+      bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
+      String? token = CacheHelper.getData(key: 'token');
+      if(onBoarding != null)
+      {
+        if(token != null) {
+          widget = ShopLayout();
+        } else {
+          widget = ShopLoginScreen();
+        }
+      } else
+      {
+        widget = OnBoardingScreen();
+      }
+
       runApp(MyApp(
         isDark: isDark,
-        startWidget: startWidget ,
+        startWidget: widget ,
       ));
     },
     blocObserver: MyBlocObserver(),
@@ -33,8 +47,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final bool isDark;
-  final Widget  startWidget;
+  final bool? isDark;
+  final Widget?  startWidget;
 
   MyApp({
     required this.isDark,
