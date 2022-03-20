@@ -51,12 +51,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       key: "onBoarding",
       value: true,
     ).then((value) {
-      navigateAndFinish(
-        context,
-        ShopLoginScreen(),
-      );
+      if (value) {
+        navigateAndFinish(
+          context,
+          ShopLoginScreen(),
+        );
+      }
     });
-
   }
 
   @override
