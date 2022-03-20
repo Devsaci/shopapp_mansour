@@ -22,8 +22,6 @@ void main() {
       await CacheHelper.init();
       bool? isDark = CacheHelper.getData(key: 'isDark');
       bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
-      print('onBoarding/////////////////////////////////////////////////');
-      print(onBoarding);
       runApp(MyApp(isDark));
     },
     blocObserver: MyBlocObserver(),
@@ -31,7 +29,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  bool? isDark;
+ final  bool? isDark;
+ final  bool? onBoarding;
+
 
   MyApp(this.isDark);
 
