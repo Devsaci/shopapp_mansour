@@ -84,7 +84,7 @@ ThemeData lightTheme =  ThemeData(
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     showSelectedLabels: true,
     type: BottomNavigationBarType.fixed,
-    selectedItemColor: Colors.deepOrange,
+    selectedItemColor: defaultColor,
     elevation: 50.0,
     backgroundColor: Colors.grey[200],
     selectedIconTheme: const IconThemeData(
