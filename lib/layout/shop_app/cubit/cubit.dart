@@ -8,5 +8,6 @@ class ShopCubit extends Cubit<ShopStates>{
   ShopCubit(ShopStates initialState) : super(initialState);
   // ShopCubit() : super(ShopInitialState());
   static ShopCubit get(context) => BlocProvider.of(context);
+  int currentIndex = 0;
 
 }
