@@ -1,3 +1,5 @@
+import 'package:app_theme_mansour/layout/shop_app/cubit/cubit.dart';
+import 'package:app_theme_mansour/layout/shop_app/cubit/states.dart';
 import 'package:app_theme_mansour/modules/shop_app/login/shop_login_screen.dart';
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
@@ -9,7 +11,7 @@ class ShopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer(
+    return BlocConsumer<ShopCubit,ShopStates>(
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
@@ -18,13 +20,7 @@ class ShopLayout extends StatelessWidget {
           ),
           body: TextButton(
             onPressed: () {
-              CacheHelper.removeData(
-                key: 'token',
-              ).then((value) {
-                if (value) {
-                  navigateAndFinish(context, ShopLoginScreen());
-                }
-              });
+
             },
             child: const Center(child: Text('SING OUT')),
           ),
