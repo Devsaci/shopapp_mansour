@@ -1,5 +1,3 @@
-
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -32,12 +30,12 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    // backgroundColor: Colors.deepOrange,
-  ),
+      // backgroundColor: Colors.deepOrange,
+      ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     showSelectedLabels: true,
     type: BottomNavigationBarType.fixed,
-    selectedItemColor: Colors.deepOrange,
+    selectedItemColor: defaultColor,
     unselectedItemColor: Colors.grey,
     elevation: 20.0,
     backgroundColor: HexColor('333739'),
@@ -55,48 +53,47 @@ ThemeData darkTheme = ThemeData(
   fontFamily: 'Jannah',
 );
 
-ThemeData lightTheme =  ThemeData(
-  primarySwatch: defaultColor,
-  scaffoldBackgroundColor: Colors.white,
-  appBarTheme: const AppBarTheme(
-    titleSpacing: 20.0,
-    backwardsCompatibility: false,
-    systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark,
+ThemeData lightTheme = ThemeData(
+    primarySwatch: defaultColor,
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      titleSpacing: 20.0,
+      backwardsCompatibility: false,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      backgroundColor: Colors.white,
+      elevation: 0.0,
+      titleTextStyle: TextStyle(
+        letterSpacing: 10.0,
+        color: Colors.black,
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
+      ),
+      iconTheme: IconThemeData(
+        color: Colors.black,
+        size: 40,
+      ),
     ),
-    backgroundColor: Colors.white,
-    elevation: 0.0,
-    titleTextStyle: TextStyle(
-      letterSpacing: 10.0,
-      color: Colors.black,
-      fontSize: 20.0,
-      fontWeight: FontWeight.bold,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+        // backgroundColor: Colors.deepOrange,
+        ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      showSelectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: defaultColor,
+      elevation: 50.0,
+      backgroundColor: Colors.grey[200],
+      selectedIconTheme: const IconThemeData(
+        size: 40.0,
+      ),
     ),
-    iconTheme: IconThemeData(
-      color: Colors.black,
-      size: 40,
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w600,
+        color: Colors.black,
+      ),
     ),
-  ),
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-    // backgroundColor: Colors.deepOrange,
-  ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    showSelectedLabels: true,
-    type: BottomNavigationBarType.fixed,
-    selectedItemColor: defaultColor,
-    elevation: 50.0,
-    backgroundColor: Colors.grey[200],
-    selectedIconTheme: const IconThemeData(
-      size: 40.0,
-    ),
-  ),
-  textTheme: const TextTheme(
-    bodyText1: TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
-  ),
-  fontFamily: 'Jannah'
-);
+    fontFamily: 'Jannah');
