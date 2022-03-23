@@ -16,17 +16,18 @@ class ShopCubit extends Cubit<ShopStates> {
 
   int currentIndex = 0;
 
-  List<Widget>  _bottomScreens = [
+  List<Widget>  bottomScreens = [
      ProductsScreen(),
      CategoriesScreen(),
      FavoritesScreen(),
      SettingsScreen(),
   ];
-// Encapsulate field
-  List<Widget> get bottomScreens => _bottomScreens;
 
-  set bottomScreens(List<Widget> bottomScreens) {
-    _bottomScreens = bottomScreens;
+  void changeBottom(int index) {
+    currentIndex = index;
+
   }
+
+
 
 }
