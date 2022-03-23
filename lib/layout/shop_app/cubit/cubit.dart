@@ -16,11 +16,17 @@ class ShopCubit extends Cubit<ShopStates> {
 
   int currentIndex = 0;
 
-  List<Widget>  bottomScreens = [
+  List<Widget>  _bottomScreens = [
      ProductsScreen(),
      CategoriesScreen(),
      FavoritesScreen(),
      SettingsScreen(),
   ];
+// Encapsulate field
+  List<Widget> get bottomScreens => _bottomScreens;
+
+  set bottomScreens(List<Widget> bottomScreens) {
+    _bottomScreens = bottomScreens;
+  }
 
 }
