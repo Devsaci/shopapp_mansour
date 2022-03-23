@@ -25,7 +25,7 @@ class ShopCubit extends Cubit<ShopStates> {
 
   void changeBottom(int index) {
     currentIndex = index;
-    emit(state);
+    emit(ShopChangeBottomNavState());
   }
 
 
