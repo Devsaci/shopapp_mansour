@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'layout/news_app/news_layout.dart';
+import 'layout/shop_app/cubit/cubit.dart';
 import 'layout/shop_app/shop_layout.dart';
 import 'modules/shop_app/login/shop_login_screen.dart';
 import 'modules/shop_app/on_boarding/on_boarding_screen.dart';
@@ -57,14 +58,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      //No Use MultiBlocProvider
-      create: (BuildContext context) => NewsCubit()
-        ..getBusiness()
-        ..getSports()
-        ..getScience()
-        ..changeAppMode(fromShared: isDark),
-      // last Update null Safety in 95. Shared Preferences
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (BuildContext context) => NewsCubit()
+            ..getBusiness()
+            ..getSports()
+            ..getScience()
+            ..changeAppMode(fromShared: isDark),
+        ),
+        BlocProvider(
+          create: (BuildContext context) => ShopCubit(),
+        ),
+      ],
       child: BlocConsumer<NewsCubit, NewsStates>(
         listener: (BuildContext context, state) {},
         builder: (BuildContext context, state) {

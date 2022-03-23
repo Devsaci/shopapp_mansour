@@ -9,25 +9,22 @@ import '../../../modules/shop_app/favorites/favorites_screen.dart';
 import '../../../modules/shop_app/products/products_screen.dart';
 
 class ShopCubit extends Cubit<ShopStates> {
-  ShopCubit(ShopStates initialState) : super(initialState);
+  // ShopCubit(ShopStates initialState) : super(initialState);
 
-  // ShopCubit() : super(ShopInitialState());
+  ShopCubit() : super(ShopInitialState());
   static ShopCubit get(context) => BlocProvider.of(context);
 
   int currentIndex = 0;
 
-  List<Widget>  bottomScreens = [
-     ProductsScreen(),
-     CategoriesScreen(),
-     FavoritesScreen(),
-     SettingsScreen(),
+  List<Widget> bottomScreens = [
+    ProductsScreen(),
+    CategoriesScreen(),
+    FavoritesScreen(),
+    SettingsScreen(),
   ];
 
   void changeBottom(int index) {
     currentIndex = index;
     emit(ShopChangeBottomNavState());
   }
-
-
-
 }
