@@ -28,6 +28,12 @@ class ShopLayout extends StatelessWidget {
                 ),
                 label: 'Home',
               ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.apps,
+                ),
+                label: 'Categories',
+              ),
             ],
           ),
         );
