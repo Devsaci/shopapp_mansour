@@ -11,16 +11,25 @@ class ShopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var cubit = ShopCubit.get(context);
-    return BlocConsumer<ShopCubit,ShopStates>(
+    return BlocConsumer<ShopCubit, ShopStates>(
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
             title: Text('Salla'),
           ),
-          body:  cubit.bottomScreens[cubit.currentIndex],
+          body: cubit.bottomScreens[cubit.currentIndex],
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: 'Home',
+              ),
+            ],
+          ),
         );
       },
     );
