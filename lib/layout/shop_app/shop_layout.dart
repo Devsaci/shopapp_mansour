@@ -40,6 +40,12 @@ class ShopLayout extends StatelessWidget {
                 ),
                 label: 'Favorites',
               ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.settings,
+                ),
+                label: 'Settings',
+              ),
             ],
           ),
         );
