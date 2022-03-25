@@ -9,5 +9,8 @@ class HomeModel{
 }
 
 class HomeDataModel {
+  HomeDataModel.fromJson(Map<String, dynamic> json){
+
+  }
 
 }
