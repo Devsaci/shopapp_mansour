@@ -11,9 +11,10 @@ class HomeModel {
 class HomeDataModel {
 
   List<BannerModel>? banners ;
+  List<ProductModel>? products;
 
   HomeDataModel.fromJson(Map<String, dynamic> json) {}
 }
-class BannerModel{
+class BannerModel{}
 
-}
+class ProductModel{}
