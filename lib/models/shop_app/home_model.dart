@@ -18,10 +18,10 @@ class HomeDataModel {
 
 class BannerModel {
 //Named Constructor
-  BannerModel.name();
+  BannerModel.fromJson();
 }
 
 class ProductModel {
 //Named Constructor
-  ProductModel.name();
+  ProductModel.fromJson();
 }
