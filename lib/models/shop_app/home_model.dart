@@ -18,10 +18,10 @@ class HomeDataModel {
 
 class BannerModel {
 //Named Constructor
-  BannerModel.fromJson();
+  BannerModel.fromJson(Map<String, dynamic> json);
 }
 
 class ProductModel {
 //Named Constructor
-  ProductModel.fromJson();
+  ProductModel.fromJson(Map<String, dynamic> json);
 }
