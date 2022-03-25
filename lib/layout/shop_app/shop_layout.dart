@@ -1,6 +1,7 @@
 import 'package:app_theme_mansour/layout/shop_app/cubit/cubit.dart';
 import 'package:app_theme_mansour/layout/shop_app/cubit/states.dart';
 import 'package:app_theme_mansour/modules/shop_app/login/shop_login_screen.dart';
+import 'package:app_theme_mansour/modules/shop_app/search/search_screen.dart';
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,12 @@ class ShopLayout extends StatelessWidget {
           appBar: AppBar(
             title: Text('Salla'),
             actions: [
-              IconButton(onPressed: (){}, icon: Icon(Icons.search))
+              IconButton(
+                onPressed: () {
+                  navigateTo(context, SearchScreen);
+                },
+                icon: const Icon(Icons.search),
+              )
             ],
           ),
           body: cubit.bottomScreens[cubit.currentIndex],
