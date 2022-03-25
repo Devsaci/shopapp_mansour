@@ -1,16 +1,19 @@
-class HomeModel{
+class HomeModel {
   late bool status;
   late HomeDataModel data;
 
-  HomeModel.fromJson(Map<String, dynamic> json){
+  HomeModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     data = HomeDataModel.fromJson(json['data']);
   }
 }
 
 class HomeDataModel {
-  HomeDataModel.fromJson(Map<String, dynamic> json){
 
-  }
+  List<BannerModel>? banners ;
+
+  HomeDataModel.fromJson(Map<String, dynamic> json) {}
+}
+class BannerModel{
 
 }
