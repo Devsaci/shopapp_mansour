@@ -24,6 +24,7 @@ class ShopLayout extends StatelessWidget {
             onTap: (index) {
               cubit.changeBottom(index);
             },
+            currentIndex: cubit.currentIndex,
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(
