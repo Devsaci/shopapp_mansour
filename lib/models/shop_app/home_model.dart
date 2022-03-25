@@ -2,7 +2,7 @@ class HomeModel{
   late bool status;
   late HomeDataModel data;
 
-  HomeModel.fromJson(this.status, this.data);
+  HomeModel.fromJson(Map<String, dynamic> json);
 }
 
 class HomeDataModel {
