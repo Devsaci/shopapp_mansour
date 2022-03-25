@@ -9,6 +9,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 import 'layout/news_app/news_layout.dart';
 import 'layout/shop_app/cubit/cubit.dart';
+import 'layout/shop_app/cubit/states.dart';
 import 'layout/shop_app/shop_layout.dart';
 import 'modules/shop_app/login/shop_login_screen.dart';
 import 'modules/shop_app/on_boarding/on_boarding_screen.dart';

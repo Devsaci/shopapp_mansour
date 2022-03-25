@@ -7,7 +7,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Categories Screen',
+        'Categories ShopScreen',
         style: Theme.of(context).textTheme.bodyText1,
       ),
     );

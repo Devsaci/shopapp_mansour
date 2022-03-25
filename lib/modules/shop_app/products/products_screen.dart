@@ -8,7 +8,7 @@ class ProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Products Screen',
+        'Products ShopScreen',
         style: Theme.of(context).textTheme.bodyText1,
       ),
     );

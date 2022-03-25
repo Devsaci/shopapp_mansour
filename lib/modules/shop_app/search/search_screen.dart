@@ -8,7 +8,7 @@ class SearchScreen  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('SearchScreen ', style: Theme.of(context).textTheme.bodyText1,),
+      child: Text('Search ShopScreen ', style: Theme.of(context).textTheme.bodyText1,),
     );
   }
 }

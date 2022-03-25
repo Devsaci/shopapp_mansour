@@ -8,7 +8,7 @@ class FavoritesScreen  extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Favorites Screen ',
+        'Favorites ShopScreen ',
         style: Theme.of(context).textTheme.bodyText1,
       ),
     );
