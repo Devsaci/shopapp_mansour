@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 
 class SearchScreen  extends StatelessWidget {
@@ -7,8 +6,12 @@ class SearchScreen  extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Search ShopScreen ', style: Theme.of(context).textTheme.bodyText1,),
+    return Scaffold(
+      appBar: AppBar(title: const Text('Search ShopScreen')),
+      body: Center(
+        child: Text('Search ShopScreen ', style: Theme.of(context).textTheme.bodyText1,),
+      ),
+
     );
   }
 }
