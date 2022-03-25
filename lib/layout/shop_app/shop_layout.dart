@@ -18,6 +18,9 @@ class ShopLayout extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text('Salla'),
+            actions: [
+              IconButton(onPressed: (){}, icon: Icon(Icons.search))
+            ],
           ),
           body: cubit.bottomScreens[cubit.currentIndex],
           bottomNavigationBar: BottomNavigationBar(
