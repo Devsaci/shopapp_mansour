@@ -1,0 +1,3 @@
+class HomeModel {}
+
+class HomeDataModel {}
