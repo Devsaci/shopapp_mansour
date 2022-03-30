@@ -2,7 +2,7 @@ class HomeModel {
   bool? status;
   HomeDataModel? data;
 // named Constructor
-  HomeModel.name(this.status, this.data);
+  HomeModel.fromJson(Map<String, dynamic> json);
 }
 
 class HomeDataModel {}
