@@ -6,6 +6,8 @@ import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../modules/shop_app/search/search_screen.dart';
+
 class ShopLayout extends StatelessWidget {
   const ShopLayout({Key? key}) : super(key: key);
 
@@ -17,6 +19,19 @@ class ShopLayout extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.search,
+                ),
+                onPressed: () {
+                  navigateTo(
+                    context,
+                    const SearchScreen(),
+                  );
+                },
+              ),
+            ],
             title: Text('Salla'),
           ),
           body: cubit.bottomScreens[cubit.currentIndex],
