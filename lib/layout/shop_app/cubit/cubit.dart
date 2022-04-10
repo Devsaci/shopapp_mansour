@@ -38,7 +38,7 @@ class ShopCubit extends Cubit<ShopStates> {
     DioHelper.getData(
       url: HOME,
     ).then((value) {
-      return null;
+      emit(ShopSuccessHomeDataState());
     }).catchError((error) {});
   }
 }
