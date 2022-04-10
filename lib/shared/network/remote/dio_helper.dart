@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 
-
 class DioHelper {
   static late Dio dio;
 
@@ -23,10 +22,9 @@ class DioHelper {
     String lang = 'ar',
     String? token,
   }) async {
-    dio.options.headers =
-    {
-      'Content-Type':'application/json',
-      'lang':lang,
+    dio.options.headers = {
+      'Content-Type': 'application/json',
+      'lang': lang,
       'Authorization': token,
     };
     return await dio.get(
@@ -42,10 +40,9 @@ class DioHelper {
     String lang = 'ar',
     String? token,
   }) async {
-    dio.options.headers =
-    {
-      'Content-Type':'application/json',
-      'lang':lang,
+    dio.options.headers = {
+      'Content-Type': 'application/json',
+      'lang': lang,
       'Authorization': token,
     };
     return dio.post(

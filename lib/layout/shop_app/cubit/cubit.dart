@@ -8,6 +8,7 @@ import '../../../modules/shop_app/categories/categories_screen.dart';
 import '../../../modules/shop_app/favorites/favorites_screen.dart';
 import '../../../modules/shop_app/products/products_screen.dart';
 import '../../../modules/shop_app/settings/settings_screen.dart';
+import '../../../shared/network/end_points.dart';
 
 class ShopCubit extends Cubit<ShopStates> {
   // ShopCubit(ShopStates initialState) : super(initialState);
@@ -34,5 +35,9 @@ class ShopCubit extends Cubit<ShopStates> {
 
   void getHomeData() {
     emit(ShopLoadingHomeDataState());
+    DioHelper.getData(
+      url: HOME,
+      query: null,
+    );
   }
 }
