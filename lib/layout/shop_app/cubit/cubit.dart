@@ -29,5 +29,8 @@ class ShopCubit extends Cubit<ShopStates> {
     emit(ShopChangeBottomNavState());
   }
 
-  void getHomeData() {}
+  void getHomeData() {
+    emit(ShopLoadingHomeDataState());
+
+  }
 }
