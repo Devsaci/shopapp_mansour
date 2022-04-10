@@ -8,6 +8,7 @@ import '../../../modules/shop_app/categories/categories_screen.dart';
 import '../../../modules/shop_app/favorites/favorites_screen.dart';
 import '../../../modules/shop_app/products/products_screen.dart';
 import '../../../modules/shop_app/settings/settings_screen.dart';
+import '../../../shared/components/constants.dart';
 import '../../../shared/network/end_points.dart';
 
 class ShopCubit extends Cubit<ShopStates> {
@@ -39,7 +40,7 @@ class ShopCubit extends Cubit<ShopStates> {
       url: HOME,
     ).then((value) {
       homeModel = HomeModel.fromJson(value.data);
-      print(homeModel.toString());
+      printFullText(homeModel.toString());
       emit(ShopSuccessHomeDataState());
     }).catchError((error) {
       print(error.toString());
