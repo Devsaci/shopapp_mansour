@@ -34,7 +34,8 @@ class BannerModel {
 }
 
 class ProductModel {
-  ProductModel.fromJson(Map<String, dynamic> json){
-
+  int? id;
+  ProductModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
   }
 }
