@@ -11,7 +11,10 @@ class HomeModel {
 
 class HomeDataModel {
   List<BannerModel> banners = [];
-  HomeDataModel.fromJson(Map<String, dynamic> json);
+
+  HomeDataModel.fromJson(Map<String, dynamic> json) {
+    json['banners'].forEach();
+  }
 }
 
 class BannerModel {}
