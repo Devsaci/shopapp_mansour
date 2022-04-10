@@ -8,12 +8,11 @@ import '../../../modules/shop_app/favorites/favorites_screen.dart';
 import '../../../modules/shop_app/products/products_screen.dart';
 import '../../../modules/shop_app/settings/settings_screen.dart';
 
-
-
 class ShopCubit extends Cubit<ShopStates> {
   // ShopCubit(ShopStates initialState) : super(initialState);
 
   ShopCubit() : super(ShopInitialState());
+
   static ShopCubit get(context) => BlocProvider.of(context);
 
   int currentIndex = 0;
@@ -29,4 +28,6 @@ class ShopCubit extends Cubit<ShopStates> {
     currentIndex = index;
     emit(ShopChangeBottomNavState());
   }
+
+  void getHomeData() {}
 }
