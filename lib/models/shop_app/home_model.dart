@@ -11,12 +11,14 @@ class HomeModel {
 
 class HomeDataModel {
   List<BannerModel> banners = [];
+  List<ProductModel> products = [];
 
   HomeDataModel.fromJson(Map<String, dynamic> json) {
-    json['banners'].forEach((element){
+    json['banners'].forEach((element) {
       banners.add(element);
     });
   }
 }
 
 class BannerModel {}
+class ProductModel {}
