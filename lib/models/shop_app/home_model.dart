@@ -33,4 +33,8 @@ class BannerModel {
   }
 }
 
-class ProductModel {}
+class ProductModel {
+  ProductModel.fromJson(){
+
+  }
+}
