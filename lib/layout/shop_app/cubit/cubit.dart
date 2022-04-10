@@ -39,6 +39,8 @@ class ShopCubit extends Cubit<ShopStates> {
       url: HOME,
     ).then((value) {
       emit(ShopSuccessHomeDataState());
-    }).catchError((error) {});
+    }).catchError((error) {
+      emit(ShopErrorHomeDataState());
+    });
   }
 }
