@@ -32,7 +32,7 @@ class ShopCubit extends Cubit<ShopStates> {
     emit(ShopChangeBottomNavState());
   }
 
-  HomeModel? homeModel;
+  late HomeModel homeModel;
 
   void getHomeData() {
     emit(ShopLoadingHomeDataState());
@@ -40,7 +40,7 @@ class ShopCubit extends Cubit<ShopStates> {
       url: HOME,
     ).then((value) {
       homeModel = HomeModel.fromJson(value.data);
-      printFullText(homeModel.toString());
+      printFullText(homeModel.data?.banners[0].image);
       emit(ShopSuccessHomeDataState());
     }).catchError((error) {
       print(error.toString());
