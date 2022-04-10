@@ -13,7 +13,9 @@ class HomeDataModel {
   List<BannerModel> banners = [];
 
   HomeDataModel.fromJson(Map<String, dynamic> json) {
-    json['banners'].forEach();
+    json['banners'].forEach((element){
+
+    });
   }
 }
 
