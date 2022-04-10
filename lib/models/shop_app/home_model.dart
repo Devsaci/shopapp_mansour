@@ -36,9 +36,11 @@ class BannerModel {
 class ProductModel {
   int? id;
   dynamic price;
+  dynamic oldPrice;
 
   ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     price = json['price'];
+    oldPrice = json['old_price'];
   }
 }
