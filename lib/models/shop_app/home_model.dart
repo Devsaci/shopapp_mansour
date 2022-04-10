@@ -41,6 +41,7 @@ class ProductModel {
   String? image;
   String? name;
   bool? inFavorites;
+  bool? inCart;
 
   ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -50,5 +51,6 @@ class ProductModel {
     image = json['image'];
     name = json['name'];
     inFavorites = json['in_favorites'];
+    inCart = json['in_cart'];
   }
 }
