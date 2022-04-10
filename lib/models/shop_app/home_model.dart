@@ -34,7 +34,7 @@ class BannerModel {
 }
 
 class ProductModel {
-  ProductModel.fromJson(){
+  ProductModel.fromJson(Map<String, dynamic> json){
 
   }
 }
