@@ -1,5 +1,4 @@
 import 'package:app_theme_mansour/layout/shop_app/cubit/states.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,9 +29,9 @@ class ShopCubit extends Cubit<ShopStates> {
     emit(ShopChangeBottomNavState());
   }
 
-  HomeModel homeModel;
-
+  HomeModel? homeModel;
   void getHomeData() {
     emit(ShopLoadingHomeDataState());
+
   }
 }
