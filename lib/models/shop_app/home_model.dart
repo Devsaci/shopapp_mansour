@@ -23,6 +23,8 @@ class HomeDataModel {
   }
 }
 
-class BannerModel {}
+class BannerModel {
+  BannerModel.fromJson();
+}
 
 class ProductModel {}
