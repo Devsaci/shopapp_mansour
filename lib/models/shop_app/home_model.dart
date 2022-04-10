@@ -24,7 +24,10 @@ class HomeDataModel {
 }
 
 class BannerModel {
-  BannerModel.fromJson();
+  int? id;
+  BannerModel.fromJson(Map<String, dynamic> json){
+    id = json['id'];
+  };
 }
 
 class ProductModel {}
