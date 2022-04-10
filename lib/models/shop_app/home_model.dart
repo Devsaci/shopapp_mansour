@@ -14,7 +14,7 @@ class HomeDataModel {
 
   HomeDataModel.fromJson(Map<String, dynamic> json) {
     json['banners'].forEach((element){
-
+      banners.add(element);
     });
   }
 }
