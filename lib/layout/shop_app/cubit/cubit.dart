@@ -3,6 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../models/shop_app/home_model.dart';
 import '../../../modules/shop_app/cateogries/categories_screen.dart';
 import '../../../modules/shop_app/favorites/favorites_screen.dart';
 import '../../../modules/shop_app/products/products_screen.dart';
@@ -28,6 +29,8 @@ class ShopCubit extends Cubit<ShopStates> {
     currentIndex = index;
     emit(ShopChangeBottomNavState());
   }
+
+  HomeModel homeModel;
 
   void getHomeData() {
     emit(ShopLoadingHomeDataState());
