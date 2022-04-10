@@ -10,6 +10,7 @@ class HomeModel {
 }
 
 class HomeDataModel {
+  List<BannerModel> banners = [];
   HomeDataModel.fromJson(Map<String, dynamic> json);
 }
 
