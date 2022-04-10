@@ -31,6 +31,5 @@ class ShopCubit extends Cubit<ShopStates> {
 
   void getHomeData() {
     emit(ShopLoadingHomeDataState());
-
   }
 }
