@@ -9,9 +9,9 @@ class DioHelper {
         //https://www.getpostman.com/collections/3223d639447a8524e38f
         baseUrl: 'https://student.valuxapps.com/api/',
         receiveDataWhenStatusError: true,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
       ),
     );
   }
