@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 import 'package:app_theme_mansour/layout/news_app/cubit/cubit.dart';
 import 'package:app_theme_mansour/layout/news_app/cubit/states.dart';
+import 'package:app_theme_mansour/shared/components/constants.dart';
 import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,7 +26,7 @@ void main() {
       bool? isDark = CacheHelper.getData(key: 'isDark');
       Widget widget;
       bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
-      String? token = CacheHelper.getData(key: 'token');
+      token = CacheHelper.getData(key: 'token');
       if(onBoarding != null)
       {
         if(token != null) {
