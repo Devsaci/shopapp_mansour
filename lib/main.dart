@@ -26,9 +26,11 @@ void main() {
       bool? isDark = CacheHelper.getData(key: 'isDark');
       Widget widget;
       bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
-      token = CacheHelper.getData(key: 'token');
+      String? token = CacheHelper.getData(key: 'token');
+      // token = CacheHelper.getData(key: 'token');
       if(onBoarding != null)
       {
+        // ignore: unnecessary_null_comparison
         if(token != null) {
           widget = ShopLayout();
         } else {
