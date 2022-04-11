@@ -32,7 +32,7 @@ class ShopLayout extends StatelessWidget {
                 },
               ),
             ],
-            title: Text('Salla'),
+            title: const Text('Salla'),
           ),
           body: cubit.bottomScreens[cubit.currentIndex],
           bottomNavigationBar: BottomNavigationBar(
