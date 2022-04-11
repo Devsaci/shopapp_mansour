@@ -19,6 +19,8 @@ void printFullText(String? text)
   pattern.allMatches(text!).forEach((match) => print(match.group(0)));
 }
 
+String token = '';
+
 
 
 
