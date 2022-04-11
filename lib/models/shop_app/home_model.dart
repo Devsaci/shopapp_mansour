@@ -15,11 +15,11 @@ class HomeDataModel {
 
   HomeDataModel.fromJson(Map<String, dynamic> json) {
     json['banners'].forEach((element) {
-      banners.add(element);
+      banners.add(BannerModel.fromJson(element));
       //I/flutter (25010): type '_InternalLinkedHashMap<String, dynamic>' is not a subtype of type 'BannerModel'
     });
     json['products'].forEach((element) {
-      products.add(element);
+      products.add(ProductModel.fromJson(element));
       //I/flutter (25010): type '_InternalLinkedHashMap<String, dynamic>' is not a subtype of type 'BannerModel'
     });
   }
