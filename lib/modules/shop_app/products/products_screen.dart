@@ -23,5 +23,9 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  Widget productBuilder() => Column();
+  Widget productBuilder() => Column(
+    children: [
+
+    ],
+  );
 }
