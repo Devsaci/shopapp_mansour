@@ -1,3 +1,4 @@
+import 'package:app_theme_mansour/models/shop_app/home_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class ProductsScreen extends StatelessWidget {
       builder: (BuildContext context, Object? state) {
         return ConditionalBuilder(
           condition: ShopCubit.get(context).homeModel != null,
-          builder: (context) => productBuilder(),
+          builder: (context) => productBuilder(ShopCubit.get(context).homeModel!),
           fallback: (context) =>
               const Center(child: CircularProgressIndicator()),
         );
@@ -24,7 +25,7 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  Widget productBuilder() => Column(
+  Widget productBuilder(HomeModel homeModel) => Column(
         children: [
           CarouselSlider(
             items: const [
