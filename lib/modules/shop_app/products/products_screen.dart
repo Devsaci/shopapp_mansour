@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,10 +15,15 @@ class ProductsScreen extends StatelessWidget {
       builder: (BuildContext context, Object? state) {
         return ConditionalBuilder(
           condition: ShopCubit.get(context).homeModel != null,
-          builder: (context) => Text("data"),
-          fallback: (context) => const Center(child: CircularProgressIndicator()),
+          builder: (context) => Text("Widget productBuilder()"),
+          fallback: (context) =>
+              const Center(child: CircularProgressIndicator()),
         );
       },
     );
+  }
+
+  Widget productBuilder() {
+    return productBuilder();
   }
 }
