@@ -25,13 +25,10 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  Widget productBuilder(HomeModel homeModel) => Column(
+  Widget productBuilder(HomeModel model) => Column(
         children: [
           CarouselSlider(
-            items:
-            [
-
-            ],
+            items: model.data?.banners.map((e) => null).toList(),
             options: CarouselOptions(),
           )
         ],
