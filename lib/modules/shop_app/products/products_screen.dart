@@ -23,7 +23,5 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  Widget productBuilder() {
-    return productBuilder();
-  }
+  Widget productBuilder() => productBuilder();
 }
