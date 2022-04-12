@@ -27,7 +27,9 @@ class ProductsScreen extends StatelessWidget {
   Widget productBuilder() => Column(
         children: [
           CarouselSlider(
-            items: [],
+            items: [
+              Image(image: NetworkImage('')),
+            ],
             options: CarouselOptions(),
           )
         ],
