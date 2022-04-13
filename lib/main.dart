@@ -54,10 +54,10 @@ class MyApp extends StatelessWidget {
   final bool? isDark;
   final Widget?  startWidget;
 
-  MyApp({
+  MyApp({Key? key,
     required this.isDark,
     required this.startWidget,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
