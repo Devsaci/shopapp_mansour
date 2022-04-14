@@ -1,4 +1,3 @@
-
 import 'package:app_theme_mansour/models/shop_app/home_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
@@ -58,22 +57,20 @@ class ProductsScreen extends StatelessWidget {
           Expanded(
             child: GridView.count(
               crossAxisCount: 2,
-              children: List.generate(
-                  model.data!.products.length,
-                  (index) => Column(
-                        children: [
-                          Image(
-                            image:
-                                NetworkImage(model.data!.products[index].image!),
-                          ),
-                        ],
-                      )),
+              children: List.generate(model.data!.products.length,
+                  (index) => buildGridProduct(model.data!.products[index])),
             ),
           ),
         ],
       );
 
-  Widget buildGridProduct(){
-    return Text('data');
+  Widget buildGridProduct(ProductModel model) {
+    return Column(
+      children: [
+        Image(
+          image: NetworkImage(model.image!),
+        ),
+      ],
+    );
   }
 }
