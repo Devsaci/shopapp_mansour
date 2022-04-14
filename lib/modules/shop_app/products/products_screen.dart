@@ -56,13 +56,17 @@ class ProductsScreen extends StatelessWidget {
           ),
           Expanded(
             child: GridView.count(
-                crossAxisCount: 2,
-                children: List.generate(
-                    model.data!.products.length, (index) => Column(
-                      children: const [
-                        Center(child:  Text('data')),
-                      ],
-                    )),
+              crossAxisCount: 2,
+              children: List.generate(
+                  model.data!.products.length,
+                  (index) => Column(
+                        children: [
+                          Image(
+                            image:
+                                NetworkImage(model.data!.products[index].image!),
+                          ),
+                        ],
+                      )),
             ),
           ),
         ],
