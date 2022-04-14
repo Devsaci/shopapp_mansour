@@ -54,14 +54,16 @@ class ProductsScreen extends StatelessWidget {
           const SizedBox(
             height: 10.0,
           ),
-          GridView.count(
-              crossAxisCount: 2,
-              children: List.generate(
-                  model.data!.products.length, (index) => Column(
-                    children: const [
-                      Center(child:  Text('data')),
-                    ],
-                  )),
+          Expanded(
+            child: GridView.count(
+                crossAxisCount: 2,
+                children: List.generate(
+                    model.data!.products.length, (index) => Column(
+                      children: const [
+                        Center(child:  Text('data')),
+                      ],
+                    )),
+            ),
           ),
         ],
       );
