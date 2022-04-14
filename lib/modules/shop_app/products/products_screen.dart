@@ -17,10 +17,8 @@ class ProductsScreen extends StatelessWidget {
       builder: (BuildContext context, Object? state) {
         return ConditionalBuilder(
           condition: ShopCubit.get(context).homeModel != null,
-          builder: (context) =>
-              productBuilder(ShopCubit.get(context).homeModel!),
-          fallback: (context) =>
-              const Center(child: CircularProgressIndicator()),
+          builder: (context) => productBuilder(ShopCubit.get(context).homeModel!),
+          fallback: (context) => const Center(child: CircularProgressIndicator()),
         );
       },
     );
@@ -46,7 +44,8 @@ class ProductsScreen extends StatelessWidget {
               autoPlayCurve: Curves.fastOutSlowIn,
               scrollDirection: Axis.horizontal,
             ),
-          )
+          ),
+
         ],
       );
 }
