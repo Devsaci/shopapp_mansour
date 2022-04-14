@@ -17,8 +17,10 @@ class ProductsScreen extends StatelessWidget {
       builder: (BuildContext context, Object? state) {
         return ConditionalBuilder(
           condition: ShopCubit.get(context).homeModel != null,
-          builder: (context) => productBuilder(ShopCubit.get(context).homeModel!),
-          fallback: (context) => const Center(child: CircularProgressIndicator()),
+          builder: (context) =>
+              productBuilder(ShopCubit.get(context).homeModel!),
+          fallback: (context) =>
+              const Center(child: CircularProgressIndicator()),
         );
       },
     );
@@ -27,11 +29,15 @@ class ProductsScreen extends StatelessWidget {
   Widget productBuilder(HomeModel model) => Column(
         children: [
           CarouselSlider(
-            items: model.data?.banners.map((e) => Image(
-              image: NetworkImage('${e.image}'),
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),).toList(),
+            items: model.data?.banners
+                .map(
+                  (e) => Image(
+                    image: NetworkImage('${e.image}'),
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                )
+                .toList(),
             options: CarouselOptions(
               height: 200.0,
               initialPage: 0,
@@ -45,7 +51,12 @@ class ProductsScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
             ),
           ),
-
+          const SizedBox(
+            height: 10.0,
+          ),
+          GridView.count(
+            crossAxisCount: 2,
+          ),
         ],
       );
 }
