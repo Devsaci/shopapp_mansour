@@ -56,6 +56,7 @@ class ProductsScreen extends StatelessWidget {
           ),
           GridView.count(
             crossAxisCount: 2,
+            children: [],
           ),
         ],
       );
