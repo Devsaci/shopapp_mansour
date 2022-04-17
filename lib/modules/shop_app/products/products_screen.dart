@@ -27,7 +27,7 @@ class ProductsScreen extends StatelessWidget {
   }
 
   Widget builderWidget(HomeModel model) => SingleChildScrollView(
-    child: Column(
+        child: Column(
           children: [
             CarouselSlider(
               items: model.data?.banners
@@ -55,18 +55,16 @@ class ProductsScreen extends StatelessWidget {
             const SizedBox(
               height: 10.0,
             ),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                children: List.generate(
-                  model.data!.products.length,
-                  (index) => buildGridProduct(model.data!.products[index]),
-                ),
+            GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(
+                model.data!.products.length,
+                (index) => buildGridProduct(model.data!.products[index]),
               ),
             ),
           ],
         ),
-  );
+      );
 
   Widget buildGridProduct(ProductModel model) {
     return Column(
