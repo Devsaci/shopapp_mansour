@@ -64,7 +64,7 @@ class ProductsScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 5.0,
-                childAspectRatio: 1 / 1.3,
+                childAspectRatio: 1 / 1.5,
                 children: List.generate(
                   model.data!.products.length,
                   (index) => buildGridProduct(model.data!.products[index]),
@@ -85,41 +85,44 @@ class ProductsScreen extends StatelessWidget {
             image: NetworkImage(model.image!),
             width: double.infinity,
             fit: BoxFit.contain,
-            height: 150,
+            height: 200,
             // height: 180.0,
           ),
-          Column(
-            children: [
-              Text(
-                model.name!,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 14.0,
-                  height: 1.3,
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+                Text(
+                  model.name!,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 14.0,
+                    height: 1.3,
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    '${model.price.round()}',
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                      color: defaultColor,
+                Row(
+                  children: [
+                    Text(
+                      '${model.price.round()}',
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        color: defaultColor,
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 10.0),
-                  Text(
-                    '${model.oldPrice.round()}',
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.grey,
-                      decoration: TextDecoration.lineThrough,
+                    const SizedBox(width: 10.0),
+                    Text(
+                      '${model.oldPrice.round()}',
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.grey,
+                        decoration: TextDecoration.lineThrough,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
