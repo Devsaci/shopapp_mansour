@@ -57,7 +57,7 @@ class ProductsScreen extends StatelessWidget {
                 // height: 10.0,
                 ),
             Container(
-              color: Colors.blueGrey,
+              color: Colors.black12,
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -77,6 +77,7 @@ class ProductsScreen extends StatelessWidget {
 
   Widget buildGridProduct(ProductModel model) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image(
           image: NetworkImage(model.image!),
