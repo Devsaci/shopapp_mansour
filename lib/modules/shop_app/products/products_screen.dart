@@ -63,6 +63,7 @@ class ProductsScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 5.0,
+                childAspectRatio: 1/1.2,
                 children: List.generate(
                   model.data!.products.length,
                   (index) => buildGridProduct(model.data!.products[index]),
@@ -80,6 +81,7 @@ class ProductsScreen extends StatelessWidget {
           image: NetworkImage(model.image!),
           width: double.infinity,
           fit: BoxFit.contain,
+          height: 200,
           // height: 180.0,
         ),
       ],
