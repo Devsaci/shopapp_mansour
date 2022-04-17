@@ -56,6 +56,7 @@ class ProductsScreen extends StatelessWidget {
               height: 10.0,
             ),
             GridView.count(
+              shrinkWrap: true,
               crossAxisCount: 2,
               children: List.generate(
                 model.data!.products.length,
