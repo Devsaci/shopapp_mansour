@@ -26,45 +26,47 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  Widget builderWidget(HomeModel model) => Column(
-        children: [
-          CarouselSlider(
-            items: model.data?.banners
-                .map(
-                  (e) => Image(
-                    image: NetworkImage('${e.image}'),
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                )
-                .toList(),
-            options: CarouselOptions(
-              height: 200.0,
-              initialPage: 0,
-              viewportFraction: 1.0,
-              enableInfiniteScroll: true,
-              reverse: false,
-              autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 3),
-              autoPlayAnimationDuration: const Duration(seconds: 1),
-              autoPlayCurve: Curves.fastOutSlowIn,
-              scrollDirection: Axis.horizontal,
-            ),
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              children: List.generate(
-                model.data!.products.length,
-                (index) => buildGridProduct(model.data!.products[index]),
+  Widget builderWidget(HomeModel model) => SingleChildScrollView(
+    child: Column(
+          children: [
+            CarouselSlider(
+              items: model.data?.banners
+                  .map(
+                    (e) => Image(
+                      image: NetworkImage('${e.image}'),
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                  .toList(),
+              options: CarouselOptions(
+                height: 200.0,
+                initialPage: 0,
+                viewportFraction: 1.0,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(seconds: 1),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                scrollDirection: Axis.horizontal,
               ),
             ),
-          ),
-        ],
-      );
+            const SizedBox(
+              height: 10.0,
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                children: List.generate(
+                  model.data!.products.length,
+                  (index) => buildGridProduct(model.data!.products[index]),
+                ),
+              ),
+            ),
+          ],
+        ),
+  );
 
   Widget buildGridProduct(ProductModel model) {
     return Column(
