@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../layout/shop_app/cubit/cubit.dart';
 import '../../../layout/shop_app/cubit/states.dart';
+import '../../../shared/styles/colors.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({Key? key}) : super(key: key);
@@ -91,6 +92,13 @@ class ProductsScreen extends StatelessWidget {
           style: const TextStyle(
             fontSize: 14.0,
             height: 1.3,
+          ),
+        ),
+        Text(
+          '${model.price.round()}',
+          style: const TextStyle(
+            fontSize: 12.0,
+            color: defaultColor,
           ),
         ),
       ],
