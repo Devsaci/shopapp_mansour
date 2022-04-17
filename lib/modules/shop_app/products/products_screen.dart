@@ -88,32 +88,36 @@ class ProductsScreen extends StatelessWidget {
             height: 150,
             // height: 180.0,
           ),
-          Text(
-            model.name!,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontSize: 14.0,
-              height: 1.3,
-            ),
-          ),
-          Row(
+          Column(
             children: [
               Text(
-                '${model.price.round()}',
-                style: const TextStyle(
-                  fontSize: 16.0,
-                  color: defaultColor,
-                ),
-              ),
-              const SizedBox(width: 10.0),
-              Text(
-                '${model.oldPrice.round()}',
+                model.name!,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   fontSize: 14.0,
-                  color: Colors.grey,
-                  decoration: TextDecoration.lineThrough,
+                  height: 1.3,
                 ),
+              ),
+              Row(
+                children: [
+                  Text(
+                    '${model.price.round()}',
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      color: defaultColor,
+                    ),
+                  ),
+                  const SizedBox(width: 10.0),
+                  Text(
+                    '${model.oldPrice.round()}',
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.grey,
+                      decoration: TextDecoration.lineThrough,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
