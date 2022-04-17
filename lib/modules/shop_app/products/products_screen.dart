@@ -53,7 +53,7 @@ class ProductsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 10.0,
+              // height: 10.0,
             ),
             Container(
               color: Colors.black54,
@@ -62,7 +62,7 @@ class ProductsScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
-                // crossAxisSpacing: 5.0,
+                crossAxisSpacing: 5.0,
                 children: List.generate(
                   model.data!.products.length,
                   (index) => buildGridProduct(model.data!.products[index]),
@@ -80,7 +80,7 @@ class ProductsScreen extends StatelessWidget {
           image: NetworkImage(model.image!),
           width: double.infinity,
           fit: BoxFit.contain,
-          height: 180.0,
+          // height: 180.0,
         ),
       ],
     );
