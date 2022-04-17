@@ -57,7 +57,7 @@ class ProductsScreen extends StatelessWidget {
             ),
             GridView.count(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               children: List.generate(
                 model.data!.products.length,
