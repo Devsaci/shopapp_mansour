@@ -1,3 +1,5 @@
+
+
 import 'package:app_theme_mansour/models/shop_app/home_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
@@ -63,7 +65,7 @@ class ProductsScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 5.0,
-                childAspectRatio: 1/1.2,
+                childAspectRatio: 1/1.6,
                 children: List.generate(
                   model.data!.products.length,
                   (index) => buildGridProduct(model.data!.products[index]),
@@ -81,9 +83,10 @@ class ProductsScreen extends StatelessWidget {
           image: NetworkImage(model.image!),
           width: double.infinity,
           fit: BoxFit.contain,
-          height: 200,
+          height: 150,
           // height: 180.0,
         ),
+        Text(model.name!),
       ],
     );
   }
