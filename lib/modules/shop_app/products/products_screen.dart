@@ -55,13 +55,18 @@ class ProductsScreen extends StatelessWidget {
             const SizedBox(
               height: 10.0,
             ),
-            GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              children: List.generate(
-                model.data!.products.length,
-                (index) => buildGridProduct(model.data!.products[index]),
+            Container(
+              color: Colors.black54,
+              child: GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: 10.0,
+                // crossAxisSpacing: 5.0,
+                children: List.generate(
+                  model.data!.products.length,
+                  (index) => buildGridProduct(model.data!.products[index]),
+                ),
               ),
             ),
           ],
