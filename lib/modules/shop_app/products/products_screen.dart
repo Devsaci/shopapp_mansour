@@ -56,14 +56,14 @@ class ProductsScreen extends StatelessWidget {
                 // height: 10.0,
                 ),
             Container(
-              color: Colors.black54,
+              color: Colors.blueGrey,
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 5.0,
-                childAspectRatio: 1 / 1.6,
+                childAspectRatio: 1 / 1.3,
                 children: List.generate(
                   model.data!.products.length,
                   (index) => buildGridProduct(model.data!.products[index]),
@@ -88,6 +88,10 @@ class ProductsScreen extends StatelessWidget {
           model.name!,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            fontSize: 14.0,
+            height: 1.3,
+          ),
         ),
       ],
     );
