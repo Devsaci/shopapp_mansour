@@ -75,7 +75,7 @@ class ProductsScreen extends StatelessWidget {
           image: NetworkImage(model.image!),
           width: double.infinity,
           fit: BoxFit.contain,
-          // height: 100.0,
+          height: 180.0,
         ),
       ],
     );
