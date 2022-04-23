@@ -111,6 +111,7 @@ class ProductsScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 10.0),
+                    if(model.discount != 0)
                     Text(
                       '${model.oldPrice.round()}',
                       style: const TextStyle(
