@@ -91,6 +91,7 @@ class ProductsScreen extends StatelessWidget {
                 height: 200,
                 // height: 180.0,
               ),
+              if(model.discount != 0)
               Container(
                 color: Colors.red,
                 padding: const EdgeInsets.symmetric(horizontal: 5.0),
