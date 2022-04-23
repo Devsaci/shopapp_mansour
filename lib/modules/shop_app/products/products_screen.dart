@@ -60,7 +60,7 @@ class ProductsScreen extends StatelessWidget {
               color: Colors.black12,
               child: GridView.count(
                 shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
+                physics:  const BouncingScrollPhysics(),
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 5.0,
