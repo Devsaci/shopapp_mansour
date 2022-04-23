@@ -60,11 +60,11 @@ class ProductsScreen extends StatelessWidget {
               color: Colors.black12,
               child: GridView.count(
                 shrinkWrap: true,
-                physics:  const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 crossAxisCount: 2,
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 5.0,
-                childAspectRatio: 1 / 1.7,
+                childAspectRatio: 1 / 1.85,
                 children: List.generate(
                   model.data!.products.length,
                   (index) => buildGridProduct(model.data!.products[index]),
@@ -91,12 +91,15 @@ class ProductsScreen extends StatelessWidget {
                 height: 200,
                 // height: 180.0,
               ),
-              if(model.discount != 0)
-              Container(
-                color: Colors.red,
-                padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                child: const Text("DISCOuNT", style: TextStyle(fontSize: 12.0,color: Colors.white),),
-              ),
+              if (model.discount != 0)
+                Container(
+                  color: Colors.red,
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: const Text(
+                    "DISCOuNT",
+                    style: TextStyle(fontSize: 12.0, color: Colors.white),
+                  ),
+                ),
             ],
           ),
           Padding(
@@ -117,21 +120,30 @@ class ProductsScreen extends StatelessWidget {
                     Text(
                       '${model.price.round()}',
                       style: const TextStyle(
-                        fontSize: 16.0,
+                        fontSize: 12.0,
                         color: defaultColor,
                       ),
                     ),
                     const SizedBox(width: 10.0),
-                    if(model.discount != 0)
-                    Text(
-                      '${model.oldPrice.round()}',
-                      style: const TextStyle(
-                        fontSize: 14.0,
-                        color: Colors.grey,
-                        decoration: TextDecoration.lineThrough,
+                    if (model.discount != 0)
+                      Text(
+                        '${model.oldPrice.round()}',
+                        style: const TextStyle(
+                          fontSize: 10.0,
+                          color: Colors.grey,
+                          decoration: TextDecoration.lineThrough,
+                        ),
+                      ),
+                    const Spacer(),
+                    IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.favorite_border,
+                        size: 19.0,
+                        color: Colors.redAccent,
                       ),
                     ),
-                    const Spacer(),
                   ],
                 ),
               ],
