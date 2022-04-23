@@ -81,12 +81,21 @@ class ProductsScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image(
-            image: NetworkImage(model.image!),
-            width: double.infinity,
-            // fit: BoxFit.contain,
-            height: 200,
-            // height: 180.0,
+          Stack(
+            children: [
+              Image(
+                image: NetworkImage(model.image!),
+                width: double.infinity,
+                // fit: BoxFit.contain,
+                height: 200,
+                // height: 180.0,
+              ),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                child: const Text("DISCOuNT", style: TextStyle(fontSize: 12.0,color: Colors.white),),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
