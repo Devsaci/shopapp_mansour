@@ -131,6 +131,7 @@ class ProductsScreen extends StatelessWidget {
                         decoration: TextDecoration.lineThrough,
                       ),
                     ),
+                    const Spacer(),
                   ],
                 ),
               ],
