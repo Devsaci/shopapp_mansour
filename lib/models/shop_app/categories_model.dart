@@ -14,7 +14,7 @@ class CategoriesDataModel {
   late List<DataModel> data;
 
   CategoriesDataModel.fromJson(Map<String, dynamic> json) {
-
+    currentPage = json['current_page'];
   }
 }
 
