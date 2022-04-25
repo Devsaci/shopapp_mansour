@@ -11,6 +11,7 @@ class CategoriesModel {
 
 class CategoriesDataModel {
   late int currentPage;
+  late List<DataModel> data;
 }
 
 class DataModel {}
