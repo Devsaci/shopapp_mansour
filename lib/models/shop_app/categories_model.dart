@@ -3,7 +3,12 @@ class CategoriesModel {
   CategoriesDataModel? data;
 
 // named Constructor
-  CategoriesModel.fromJson(this.status, this.data);
+  CategoriesModel.fromJson(Map<String, dynamic> json)
+  {
+
+  }
+
+
 }
 
 class CategoriesDataModel {}
