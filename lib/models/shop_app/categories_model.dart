@@ -3,7 +3,7 @@ class CategoriesModel {
   CategoriesDataModel? data;
 
 // named Constructor
-  CategoriesModel.name(this.status, this.data);
+  CategoriesModel.fromJson(this.status, this.data);
 }
 
 class CategoriesDataModel {}
