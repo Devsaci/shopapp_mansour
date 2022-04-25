@@ -12,6 +12,10 @@ class CategoriesModel {
 class CategoriesDataModel {
   late int currentPage;
   late List<DataModel> data;
+
+  CategoriesDataModel.fromJson(Map<String, dynamic> json) {
+
+  }
 }
 
 class DataModel {}
