@@ -3,12 +3,9 @@ class CategoriesModel {
   CategoriesDataModel? data;
 
 // named Constructor
-  CategoriesModel.fromJson(Map<String, dynamic> json)
-  {
-
+  CategoriesModel.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
   }
-
-
 }
 
 class CategoriesDataModel {}
