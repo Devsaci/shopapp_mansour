@@ -15,10 +15,13 @@ class CategoriesDataModel {
 
   CategoriesDataModel.fromJson(Map<String, dynamic> json) {
     currentPage = json['current_page'];
-    json['data'].forEach((element){});
-    data = (json['data']);
-
+    json['data'].forEach((element) {
+      data.add(DataModel.fromJson(json['data']));
+    });
   }
 }
 
-class DataModel {}
+class DataModel {
+
+  DataModel.fromJson(Map<String, dynamic> json);
+}
