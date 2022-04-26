@@ -56,7 +56,10 @@ class ProductsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text("Categories",style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.w800),),
+            const Text(
+              "Categories",
+              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
+            ),
             Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
@@ -79,8 +82,10 @@ class ProductsScreen extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            const Text("New Products",style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.w800),),
+            ), // Item Categories
+            const Text("New Products",
+                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
+            const SizedBox(height: 10.0),
             Container(
               color: Colors.black12,
               child: GridView.count(
@@ -100,6 +105,7 @@ class ProductsScreen extends StatelessWidget {
         ),
       );
 
+  Widget buildCategoryItem() => Text("Stack");
   Widget buildGridProduct(ProductModel model) {
     return Container(
       color: Colors.white,
