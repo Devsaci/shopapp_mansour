@@ -56,7 +56,7 @@ class ProductsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text("Categories",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w800),),
+            const Text("Categories",style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.w800),),
             Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
@@ -80,6 +80,7 @@ class ProductsScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const Text("New Products",style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.w800),),
             Container(
               color: Colors.black12,
               child: GridView.count(
