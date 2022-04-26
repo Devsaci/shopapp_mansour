@@ -56,23 +56,31 @@ class ProductsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              "Categories",
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
-            ),
-            Container(
-              color: Colors.black,
-              height: 150,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => buildCategoryItem(),
-                separatorBuilder: (context, index) => const SizedBox(width: 5.0),
-                itemCount: 10,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Categories",
+                    style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
+                  ),
+                  Container(
+                    color: Colors.black,
+                    height: 150,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => buildCategoryItem(),
+                      separatorBuilder: (context, index) => const SizedBox(width: 5.0),
+                      itemCount: 10,
+                    ),
+                  ), // List  Item Categories
+                  Text("New Products",
+                      style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
+                ],
               ),
-            ), // List  Item Categories
-            const Text("New Products",
-                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
+            ),
             const SizedBox(height: 10.0),
             Container(
               color: Colors.black12,
