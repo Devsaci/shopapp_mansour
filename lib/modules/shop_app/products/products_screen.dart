@@ -63,6 +63,7 @@ class ProductsScreen extends StatelessWidget {
               height: 150.0,
               width: 150.0,
               child: Stack(
+                alignment: AlignmentDirectional.bottomCenter,
                 children: [
                   const Image(
                     image: NetworkImage(
