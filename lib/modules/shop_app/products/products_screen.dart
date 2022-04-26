@@ -56,7 +56,7 @@ class ProductsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text("Categories"),
+            const Text("Categories",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w800),),
             Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
