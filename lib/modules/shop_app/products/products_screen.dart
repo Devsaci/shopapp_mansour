@@ -60,7 +60,17 @@ class ProductsScreen extends StatelessWidget {
               "Categories",
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
             ),
-            buildCategoryItem(), // Item Categories
+            Container(
+              color: Colors.black,
+              height: 150,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemBuilder: (context, index) => buildCategoryItem(),
+                separatorBuilder: (context, index) => const SizedBox(width: 5.0),
+                itemCount: 10,
+              ),
+            ), // List  Item Categories
             const Text("New Products",
                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
             const SizedBox(height: 10.0),
@@ -84,28 +94,29 @@ class ProductsScreen extends StatelessWidget {
       );
 
   Widget buildCategoryItem() => Stack(
-    alignment: AlignmentDirectional.bottomCenter,
-    children: [
-      const Image(
-        image: NetworkImage(
-            'https://student.valuxapps.com/storage/uploads/banners/1619472351ITAM5.3bb51c97376281.5ec3ca8c1e8c5.jpg'),
-        height: 150.0,
-        width: 150.0,
-        fit: BoxFit.cover,
-      ),
-      Container(
-        color: Colors.black.withOpacity(0.7),
-        width: 150,
-        child: const Text(
-          "Electronics",
-          style: TextStyle(color: Colors.white),
-          textAlign: TextAlign.center,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-      ),
-    ],
-  );
+        alignment: AlignmentDirectional.bottomCenter,
+        children: [
+          const Image(
+            image: NetworkImage(
+                'https://student.valuxapps.com/storage/uploads/banners/1619472351ITAM5.3bb51c97376281.5ec3ca8c1e8c5.jpg'),
+            height: 150.0,
+            width: 150.0,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            color: Colors.black.withOpacity(0.7),
+            width: 150,
+            child: const Text(
+              "Electronics",
+              style: TextStyle(color: Colors.white),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      );
+
   Widget buildGridProduct(ProductModel model) {
     return Container(
       color: Colors.white,
