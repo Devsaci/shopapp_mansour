@@ -65,6 +65,7 @@ class ProductsScreen extends StatelessWidget {
                     "Categories",
                     style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
                   ),
+                  const SizedBox(height: 10.0),
                   Container(
                     color: Colors.black,
                     height: 150,
@@ -75,13 +76,14 @@ class ProductsScreen extends StatelessWidget {
                       separatorBuilder: (context, index) => const SizedBox(width: 5.0),
                       itemCount: 10,
                     ),
-                  ), // List  Item Categories
+                  ),
+                  const SizedBox(height: 20.0),// List  Item Categories
                   Text("New Products",
                       style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
                 ],
               ),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(height: 20.0),
             Container(
               color: Colors.black12,
               child: GridView.count(
