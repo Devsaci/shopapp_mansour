@@ -54,11 +54,16 @@ class ProductsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-                // height: 10.0,
+                height: 10.0,
                 ),
             Stack(
-              children: [
-                Image(image: NetworkImage('url'))
+              children:  const [
+                Image(
+                  image: NetworkImage('https://student.valuxapps.com/storage/uploads/banners/1619472351ITAM5.3bb51c97376281.5ec3ca8c1e8c5.jpg'),
+                  height: 100.0,
+                  width: 100.0,
+                  fit: BoxFit.cover,
+                ),
               ],
             ),
             Container(
