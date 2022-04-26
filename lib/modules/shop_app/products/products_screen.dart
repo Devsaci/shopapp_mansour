@@ -64,6 +64,7 @@ class ProductsScreen extends StatelessWidget {
                   width: 100.0,
                   fit: BoxFit.cover,
                 ),
+                Text("Electronics"),
               ],
             ),
             Container(
