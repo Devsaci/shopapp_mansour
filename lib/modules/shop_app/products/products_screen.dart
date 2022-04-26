@@ -56,6 +56,11 @@ class ProductsScreen extends StatelessWidget {
             const SizedBox(
                 // height: 10.0,
                 ),
+            Stack(
+              children: [
+                Image(image: NetworkImage('url'))
+              ],
+            ),
             Container(
               color: Colors.black12,
               child: GridView.count(
