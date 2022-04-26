@@ -69,6 +69,7 @@ class ProductsScreen extends StatelessWidget {
                 ),
                 Container(
                   color: Colors.black.withOpacity(0.7),
+                  width: double.infinity,
                   child: const Text("Electronics", style: TextStyle(color: Colors.white),),
                 ),
               ],
