@@ -29,6 +29,7 @@ class ProductsScreen extends StatelessWidget {
   }
 
   Widget builderWidget(HomeModel model) => SingleChildScrollView(
+    physics: BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -61,7 +62,7 @@ class ProductsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Categories",
                     style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
                   ),
@@ -70,6 +71,7 @@ class ProductsScreen extends StatelessWidget {
                     color: Colors.black,
                     height: 150,
                     child: ListView.separated(
+                      physics: BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
                       itemBuilder: (context, index) => buildCategoryItem(),
@@ -78,7 +80,7 @@ class ProductsScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20.0),// List  Item Categories
-                  Text("New Products",
+                  const Text("New Products",
                       style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
                 ],
               ),
