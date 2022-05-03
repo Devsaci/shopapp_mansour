@@ -39,5 +39,5 @@ class CategoriesScreen extends StatelessWidget {
     );
   }
 
-  Widget buildCatItem( ) => Text('Padding')
+  Widget buildCatItem( ) => Text('Padding');
 }
