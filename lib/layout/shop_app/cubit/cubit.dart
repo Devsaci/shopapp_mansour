@@ -3,6 +3,7 @@ import 'package:app_theme_mansour/shared/network/remote/dio_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../models/shop_app/categories_model.dart';
 import '../../../models/shop_app/home_model.dart';
 import '../../../modules/shop_app/categories/categories_screen.dart';
 import '../../../modules/shop_app/favorites/favorites_screen.dart';
@@ -32,7 +33,7 @@ class ShopCubit extends Cubit<ShopStates> {
     emit(ShopChangeBottomNavState());
   }
 
- HomeModel? homeModel;
+  HomeModel? homeModel;
 
   void getHomeData() {
     emit(ShopLoadingHomeDataState());
@@ -42,12 +43,33 @@ class ShopCubit extends Cubit<ShopStates> {
       // 108. Build Shop Layout [2]
     ).then((value) {
       homeModel = HomeModel.fromJson(value.data);
+      print('////******//////PRODUCTS////******/////');
       print(homeModel?.data?.banners[0].image);
       print('////******//////${homeModel?.status}////******/////');
       emit(ShopSuccessHomeDataState());
     }).catchError((error) {
       print(error.toString());
       emit(ShopErrorHomeDataState());
+    });
+  }
+
+// 110. Setup Categories
+  CategoriesModel? categoriesModel;
+
+  void getCategoriesData() {
+    // emit(ShopLoadingCategoriesDataState());
+    DioHelper.getData(
+      url: GET_CATEGORIES,
+      // token: token,
+    ).then((value) {
+      categoriesModel = CategoriesModel.fromJson(value.data);
+      print('////******//////CATEGORIES////******/////');
+      print(categoriesModel?.data?.data[4].name);
+      print('////******//////${categoriesModel?.status}////******/////');
+      emit(ShopSuccessCategoriesState());
+    }).catchError((error) {
+      print(error.toString());
+      emit(ShopErrorCategoriesState());
     });
   }
 }

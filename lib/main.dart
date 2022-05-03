@@ -1,14 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 import 'package:app_theme_mansour/layout/news_app/cubit/cubit.dart';
 import 'package:app_theme_mansour/layout/news_app/cubit/states.dart';
-import 'package:app_theme_mansour/shared/components/constants.dart';
 import 'package:app_theme_mansour/shared/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hexcolor/hexcolor.dart';
-
-import 'layout/news_app/news_layout.dart';
 import 'layout/shop_app/cubit/cubit.dart';
 import 'layout/shop_app/shop_layout.dart';
 import 'modules/shop_app/login/shop_login_screen.dart';
@@ -71,7 +66,7 @@ class MyApp extends StatelessWidget {
             ..changeAppMode(fromShared: isDark),
         ),
         BlocProvider(
-          create: (BuildContext context) => ShopCubit()..getHomeData(),
+          create: (BuildContext context) => ShopCubit()..getHomeData()..getCategoriesData(),
         ),
       ],
       child: BlocConsumer<NewsCubit, NewsStates>(

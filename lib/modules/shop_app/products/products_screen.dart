@@ -1,7 +1,7 @@
+import 'package:app_theme_mansour/models/shop_app/categories_model.dart';
 import 'package:app_theme_mansour/models/shop_app/home_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,9 +18,10 @@ class ProductsScreen extends StatelessWidget {
       listener: (BuildContext context, state) {},
       builder: (BuildContext context, Object? state) {
         return ConditionalBuilder(
-          condition: ShopCubit.get(context).homeModel != null,
-          builder: (context) =>
-              builderWidget(ShopCubit.get(context).homeModel!),
+          condition: ShopCubit.get(context).homeModel != null &&
+              ShopCubit.get(context).categoriesModel != null,
+          builder: (context) => builderWidget(ShopCubit.get(context).homeModel!,
+              ShopCubit.get(context).categoriesModel!),
           fallback: (context) =>
               const Center(child: CircularProgressIndicator()),
         );
@@ -28,8 +29,9 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  Widget builderWidget(HomeModel model) => SingleChildScrollView(
-    physics: BouncingScrollPhysics(),
+  Widget builderWidget(HomeModel model, CategoriesModel categoriesModel) =>
+      SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -64,24 +66,27 @@ class ProductsScreen extends StatelessWidget {
                 children: [
                   const Text(
                     "Categories",
-                    style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
+                    style:
+                        TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),
                   ),
                   const SizedBox(height: 10.0),
                   Container(
                     color: Colors.black,
                     height: 150,
                     child: ListView.separated(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
-                      itemBuilder: (context, index) => buildCategoryItem(),
-                      separatorBuilder: (context, index) => const SizedBox(width: 5.0),
-                      itemCount: 10,
+                      itemBuilder: (context, index) => buildCategoryItem(categoriesModel.data!.data[index]),
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 5.0),
+                      itemCount: categoriesModel.data!.data.length,
                     ),
                   ),
-                  const SizedBox(height: 20.0),// List  Item Categories
+                  const SizedBox(height: 20.0), // List  Item Categories
                   const Text("New Products",
-                      style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800)),
+                      style: TextStyle(
+                          fontSize: 24.0, fontWeight: FontWeight.w800)),
                 ],
               ),
             ),
@@ -105,12 +110,11 @@ class ProductsScreen extends StatelessWidget {
         ),
       );
 
-  Widget buildCategoryItem() => Stack(
+  Widget buildCategoryItem(DataModel model) => Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: [
-          const Image(
-            image: NetworkImage(
-                'https://student.valuxapps.com/storage/uploads/banners/1619472351ITAM5.3bb51c97376281.5ec3ca8c1e8c5.jpg'),
+           Image(
+            image: NetworkImage(model.image!),
             height: 150.0,
             width: 150.0,
             fit: BoxFit.cover,
@@ -118,9 +122,9 @@ class ProductsScreen extends StatelessWidget {
           Container(
             color: Colors.black.withOpacity(0.7),
             width: 150,
-            child: const Text(
-              "Electronics",
-              style: TextStyle(color: Colors.white),
+            child:  Text(
+              model.name!,
+              style: const TextStyle(color: Colors.white),
               textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
