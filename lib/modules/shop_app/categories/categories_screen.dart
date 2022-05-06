@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../layout/shop_app/cubit/cubit.dart';
 import '../../../layout/shop_app/cubit/states.dart';
+import '../../../models/shop_app/categories_model.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -15,7 +16,8 @@ class CategoriesScreen extends StatelessWidget {
       listener: (BuildContext context, Object? state) {},
       builder: (BuildContext context, state) {
         return ListView.separated(
-          itemBuilder: (context, index) => buildCatItem(),
+          itemBuilder: (context, index) => buildCatItem(
+              ShopCubit.get(context).categoriesModel!.data!.data[index]),//
           separatorBuilder: (context, index) => myDivider(),
           itemCount: 10,
         );
@@ -23,14 +25,12 @@ class CategoriesScreen extends StatelessWidget {
     );
   }
 
-  Widget buildCatItem() => Padding(
+  Widget buildCatItem(DataModel model) => Padding(
         padding: const EdgeInsets.all(20.0),
         child: Row(
-          children: const [
+          children: [
             Image(
-              image: NetworkImage(
-                'https://student.valuxapps.com/storage/uploads/banners/1619472351ITAM5.3bb51c97376281.5ec3ca8c1e8c5.jpg',
-              ),
+              image: NetworkImage("model.image!"),
               width: 120.0,
               height: 120.0,
               fit: BoxFit.cover,
