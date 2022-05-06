@@ -1,16 +1,25 @@
 import 'package:app_theme_mansour/shared/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../layout/shop_app/cubit/cubit.dart';
+import '../../../layout/shop_app/cubit/states.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemBuilder: (context,index) => buildCatItem(),
-      separatorBuilder: (context,index) => myDivider(),
-      itemCount: 10,
+    return BlocConsumer<ShopCubit, ShopStates>(
+      listener: (BuildContext context, Object? state) {},
+      builder: (BuildContext context, state) {
+        return ListView.separated(
+          itemBuilder: (context, index) => buildCatItem(),
+          separatorBuilder: (context, index) => myDivider(),
+          itemCount: 10,
+        );
+      },
     );
   }
 
