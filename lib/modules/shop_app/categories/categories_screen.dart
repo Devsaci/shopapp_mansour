@@ -19,7 +19,7 @@ class CategoriesScreen extends StatelessWidget {
           itemBuilder: (context, index) => buildCatItem(
               ShopCubit.get(context).categoriesModel!.data!.data[index]),//
           separatorBuilder: (context, index) => myDivider(),
-          itemCount: 10,
+          itemCount: ShopCubit.get(context).categoriesModel!.data!.data.length,
         );
       },
     );
@@ -30,7 +30,7 @@ class CategoriesScreen extends StatelessWidget {
         child: Row(
           children: [
             Image(
-              image: NetworkImage("model.image!"),
+              image: NetworkImage(model.image!),
               width: 120.0,
               height: 120.0,
               fit: BoxFit.cover,
